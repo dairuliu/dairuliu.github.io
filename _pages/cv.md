@@ -11,54 +11,60 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* **Nankai University**, Tianjin, China
+  * B.Eng. in Software Engineering
+  * Sep. 2023 -- Jun. 2027 (expected)
+  * GPA: 3.75
 
-Work experience
+* **The Affiliated High School of Peking University**, Beijing, China
+
+Research Interests
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* **Embodied Intelligence**, **Spatial Intelligence**, **Multimodal Reasoning**
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
+Research Experience
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* **Research Intern, GALBOT | IIIS, Tsinghua University** (Dec. 2025 -- present)
+  * Supervisor: Prof. **Li Yi**; Collaborator: Zekun Qi
+  * **General Reward Model for Humanoid Robot**: Exploring reward modeling for humanoid control.
+
+* **Research Intern, Institute for AI Industry Research (AIR), Tsinghua University** (Apr. 2024 -- Dec. 2025)
+  * Supervisor: Prof. **Peng Li**, Prof. **Yang Liu**; Collaborator: Ziyue Wang
+  * **Multimodal Reasoning**: Proposed **Visual Abstract Thinking (VAT)**, a novel reasoning paradigm inspired by human visual cognition. VAT enables MLLMs to reason more effectively by leveraging visual abstractions. Achieved **17% improvement over GPT-4o** on visual perception/reasoning tasks.
+  * **4D Escape-Room Environment**: Proposed a spatio-temporal escape-room environment to evaluate multimodal agents, emphasizing active perception.
+  * **Self-Evolving Agents**: Explored generalization from weak to strong supervision for agent performance improvement.
+
+* **Research Intern, Pervasive Human-Computer Interaction Lab (&pi; Lab), Tsinghua University** (Sep. 2024 -- May 2025)
+  * Supervisor: Prof. **Chun Yu**
+  * **Psychological Agent**: Implemented a **Cognitive Behavioral Therapy (CBT) expert agent** for the CYL 12355 Youth Service Hotline (Fujian). The agent adheres to structured CBT protocols for psychological counseling. [[Related Report](https://mp.weixin.qq.com/s/623ojqhjyzcNFoT9bhoWkQ)]
+
+Internship Experience
+======
+* **Industry Research Intern, Jingxing Capital** (Jan. 2024 -- Feb. 2024)
+  * Studied equity research reports and market rotation patterns.
+  * Developed Python scripts for automated daily NAV reporting.
+  * Gained exposure to investment decision workflows.
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
+1. **Thinking with Visual Abstract: Enhancing Multimodal Reasoning via Visual Abstraction** [[arXiv](https://arxiv.org/abs/2505.20164)] [[GitHub](https://github.com/THUNLP-MT/VAT)]
+   * _**Dairu Liu***, Ziyue Wang*, Minyuan Ruan*, Fuwen Luo, Chi Chen, Peng Li, Yang Liu_
+   * **ICML Under Review, NeurIPS 2025 Multimodal Algorithmic Reasoning Workshop**
+
+Awards
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
+* **National Scholarship** (Undergraduate, 10000CNY), Sep. 2024
+* **Second Prize**, NOIP 2018 (National Olympiad in Informatics in Provinces), Dec. 2018
+* **Second Prize**, CSP-S 2019 (CCF Certified Software Professional), Dec. 2019
+
+Extracurriculars
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
+* **Vice President**, Quantitative Finance & Investment Society, Nankai University (Sep. 2025 -- Present)
+* **Member**, University Ski Team, Nankai University (2024 -- 2025)
+* **Academic Department Vice-Head**, Psychology Association, Nankai University (Sep. 2024 -- Sep. 2025)
+
+Skills
 ======
-* Currently signed in to 43 different slack teams
+* **Programming**: C++, Python, MATLAB, LaTeX
+* **Languages**: Mandarin Chinese (native); English (IELTS 7.0: L 7.5, R 8.0, S 6.0, W 6.0; CET-6 608)
+* **Interests**: Skiing, Psychology, Trading
