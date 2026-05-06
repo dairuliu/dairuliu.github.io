@@ -13,9 +13,7 @@ redirect_from:
 
 I am a junior undergraduate student at **Nankai University**, majoring in Software Engineering. My research goal is to leverage large-scale data to build generalizable embodied agents capable of performing diverse real world tasks.
 
-Currently, I am a research intern at **GALBOT \| IIIS, Tsinghua University**, advised by Prof. [**Li Yi**](https://ericyi.github.io). I am also a research intern at **THUNLP \| AIR, Tsinghua University**, working with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/).
-
-For more details, please see my [CV](/files/DairuLiu_CV.pdf).
+Currently, I am a research intern at **GALBOT**, advised by Prof. [**Li Yi**](https://ericyi.github.io). I am also a research intern at **THUNLP \| AIR, Tsinghua University**, working with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/).
 
 ## Research Interests
 
