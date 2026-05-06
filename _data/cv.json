@@ -1,152 +1,200 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Dairu Liu",
+    "email": "ironmt00@gmail.com",
+    "phone": "+86-175-0102-4327",
+    "website": "https://dairuliu.github.io",
+    "summaryTitle": "Research Interests",
+    "summary": "My primary research goal is to leverage large-scale data to build generalizable embodied agents capable of performing diverse real world tasks. I am particularly interested in Robot Learning (scaling up robot data, efficient robot learning algorithms, humanoid whole-body control, loco-manipulation) and Multimodal Reasoning (agentic perception, cross-modal understanding, long-horizon decision making).",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "address": null,
+      "postalCode": null,
+      "city": "Beijing",
+      "countryCode": "China",
+      "region": null
     },
     "profiles": [
       {
         "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
+        "username": null,
+        "url": "https://scholar.google.com/citations?user=DY5lKFcAAAAJ&hl=zh-CN"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "dairuliu",
+        "url": "https://github.com/dairuliu"
       }
     ]
   },
-  "work": [],
+  "workTitle": "Research Experience",
+  "work": [
+    {
+      "company": "GALBOT | IIIS, Tsinghua University",
+      "position": "Research Intern",
+      "startDate": "Dec. 2025",
+      "endDate": "Present",
+      "summary": "Advisor: Prof. Li Yi",
+      "highlights": [
+        "Built a large-scale humanoid motion tracking benchmark and proposed a preference-aligned reward model for whole-body control evaluation, addressing the misalignment between kinematic metrics and human perception. [1]"
+      ]
+    },
+    {
+      "company": "THUNLP | AIR, Tsinghua University",
+      "position": "Research Intern",
+      "startDate": "Apr. 2024",
+      "endDate": "Present",
+      "summary": "Advisor: Prof. Peng Li, Prof. Yang Liu",
+      "highlights": [
+        "Proposed Visual Abstract Thinking, a novel multimodal reasoning paradigm that enhances MLLMs via visual abstraction rather than verbose verbal rationales. [2]",
+        "Developed a 4D escape-room benchmark for evaluating time awareness and cross-modal active perception in Omni models. [5]",
+        "Exploring self-evolving agents that generalize from weak to strong supervision."
+      ]
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
+      "institution": "Nankai University, Tianjin, China",
+      "area": "B.Eng. in Software Engineering",
+      "studyType": null,
+      "startDate": "Sep. 2023",
+      "endDate": "Jun. 2027 (expected)",
+      "gpa": "3.75; Top 15%",
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "institution": "The Affiliated High School of Peking University, Beijing, China",
+      "area": null,
+      "studyType": null,
+      "startDate": null,
+      "endDate": null,
       "gpa": null,
       "courses": []
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
+  "skills": [
+    {
+      "name": "Robot Platforms",
+      "keywords": ["Unitree G1"]
+    },
+    {
+      "name": "Programming",
+      "keywords": ["C++", "Python", "MATLAB", "LaTeX"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Mandarin Chinese",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "IELTS 7.0 (L 7.5, R 8.0, S 6.0, W 6.0); CET-6 608"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Skiing",
+      "keywords": []
+    }
+  ],
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "HumanTracker: Towards Comprehensive and Human-Aligned Motion Tracking Benchmark",
+      "publisher": "ECCV 2026 (Score: 4.33/6.0; Top 2% Submission)",
+      "releaseDate": "2026",
+      "website": null,
+      "authors": "Dairu Liu*, Zekun Qi*, Jiayu Zeng*, Yu Guan, Chenghuai Lin, Xuchuan Chen, Xinqiang Yu, Wenyao Zhang, He Wang, Li Yi",
+      "summary": null,
+      "highlights": [
+        "Built a standardized humanoid motion tracking benchmark with 150 hours of newly captured optical mocap from 24 professional performers, comprising 24K clips organized into 4 motion families for fine-grained diagnosis.",
+        "Proposed HumanScore, a preference-aligned reward model trained on 3K pairwise human comparisons; achieves 0.8834 alignment rate with human judgments, outperforming MPJPE (0.8164), and validated on Unitree G1 real-robot deployment."
+      ]
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "Thinking with Visual Abstract: Enhancing Multimodal Reasoning via Visual Abstraction",
+      "publisher": "COLM 2026 Under Review; NeurIPS 2025 Workshop",
+      "releaseDate": "2026",
+      "website": "https://arxiv.org/abs/2505.20164",
+      "authors": "Dairu Liu*, Ziyue Wang*, Minyuan Ruan*, Fuwen Luo, Chi Chen, Peng Li, Yang Liu",
+      "summary": null,
+      "highlights": [
+        "Proposed Visual Abstract Thinking (VAT), a reasoning paradigm that replaces verbose verbal CoT with visual abstractions, focusing models on semantic, structural, and geometric cues.",
+        "VAT achieves +2.21% average gain over the GPT-5 baseline, exceeding CoT (+0.96%); uses only 0.68x CoT runtime and 0.1x the tokens of Visual Sketchpad on GPT-4o. RL-trained VAT further gains +4.52% on Qwen-2.5-VL-3B."
+      ]
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "LIMMT: Less is More for Motion Tracking",
+      "publisher": "ICML 2026",
+      "releaseDate": "2026",
+      "website": null,
+      "authors": "Yu Guan*, Zekun Qi*, Chenghuai Lin, Dairu Liu, Xuchuan Chen, Wenyao Zhang, Jilong Wang, Xinqiang Yu, He Wang, Li Yi",
+      "summary": null,
+      "highlights": [
+        "First data centric study for humanoid motion tracking: General Quality Selection (GQS) scores motion along physics feasibility, diversity (HME embeddings), and complexity, then selects compact subsets via complexity-weighted farthest-point sampling.",
+        "Showed a strong less-is-more effect: training on approximately 3% of AMASS can outperform the full corpus across trackers (e.g., Any2Track, TWIST2); validated cross-dataset transfer and real-world Unitree G1 deployment without fine-tuning."
+      ]
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking",
+      "publisher": "CVPR 2026",
+      "releaseDate": "2026",
+      "website": null,
+      "authors": "Zekun Qi*, Xuchuan Chen*, Jilong Wang*, Chenghuai Lin*, Yunrui Lian, Zhikai Zhang, Dairu Liu, Wenyao Zhang, Yu Guan, Xinqiang Yu, He Wang, Li Yi",
+      "summary": null,
+      "highlights": [
+        "Introduced Humanoid-GPT, a GPT style causal Transformer trained on an approximately 2B-frame retargeted motion corpus, distilling hundreds of RL motion experts via DAgger into a single general motion tracker with strong zero-shot generalization on Unitree G1.",
+        "Proposed Harmonic Motion Embedding (HME) for diversity-aware, distribution-balanced sampling; characterized scaling trends for data and model size and deployed with real-time inference (ONNX/TensorRT, <1.5 ms on RTX 4090)."
+      ]
+    },
+    {
+      "name": "Evaluating Time Awareness and Cross-modal Active Perception of Large Models via 4D Escape Room Task",
+      "publisher": "EMNLP 2026 Under Review",
+      "releaseDate": "2026",
+      "website": null,
+      "authors": "Yurui Dong*, Ziyue Wang*, Shuyun Lu*, Dairu Liu*, Xuechen Liu*, Fuwen Luo, Peng Li, Yang Liu",
+      "summary": null,
+      "highlights": [
+        "Developed EscapeCraft-4D, a customizable 4D escape-room benchmark (66 scenes, 1,032 objects) incorporating trigger-based audio, misleading auditory distractors, and temporally transient clues for evaluating time-aware multimodal reasoning.",
+        "Introduced 4D specific process level metrics beyond final success rate: AMR (Audio Misleading Rate) and TCSS (Transient Clue Seeing Speed), revealing significant modality bias and failures in time-conditioned decision making across Omni models."
+      ]
     }
   ],
-  "presentations": [
+  "awards": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
+      "title": "National Scholarship",
+      "date": "Sep. 2024",
+      "summary": "Top 0.2%; Undergraduate, 10000CNY"
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
+      "title": "Second Prize, NOIP 2018",
+      "date": "Dec. 2018",
+      "summary": "National Olympiad in Informatics in Provinces"
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
+      "title": "Second Prize, CSP-S 2019",
+      "date": "Dec. 2019",
+      "summary": "CCF Certified Software Professional"
     }
   ],
-  "teaching": [
+  "leadership": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "role": "Vice President",
+      "organization": "Quantitative Finance & Investment Society, Nankai University",
+      "date": "Sep. 2025 - Present"
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "role": "Member",
+      "organization": "University Ski Team, Nankai University",
+      "date": "2024 - 2025"
+    },
+    {
+      "role": "Academic Department Vice-Head",
+      "organization": "Psychology Association, Nankai University",
+      "date": "Sep. 2024 - Sep. 2025"
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "presentations": [],
+  "teaching": [],
+  "portfolio": []
 }

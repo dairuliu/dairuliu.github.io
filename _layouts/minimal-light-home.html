@@ -1,0 +1,50 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css">
+  </head>
+
+  <body class="minimal-light-home">
+    <div class="minimal-light-shell">
+      <aside class="minimal-light-sidebar" itemscope itemtype="http://schema.org/Person">
+        {% assign author = site.author %}
+        {% if author.avatar %}
+          {% if author.avatar contains "://" %}
+            <img class="minimal-light-avatar" src="{{ author.avatar }}" alt="{{ author.name }}" fetchpriority="high">
+          {% else %}
+            <img class="minimal-light-avatar" src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ author.name }}" fetchpriority="high">
+          {% endif %}
+        {% endif %}
+
+        <h1 class="minimal-light-name" itemprop="name">{{ author.name | default: site.title }}</h1>
+        <p class="minimal-light-role">Undergraduate Student</p>
+        <p class="minimal-light-affiliation">Nankai University</p>
+        {% if author.email %}
+          <p class="minimal-light-email"><a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+        {% endif %}
+
+        <nav class="minimal-light-links" aria-label="Profile links">
+          {% if author.googlescholar %}
+            <a href="{{ author.googlescholar }}" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          {% endif %}
+          <a href="{{ base_path }}/files/DairuLiu_CV.pdf" aria-label="CV">CV</a>
+          {% if author.github %}
+            <a href="https://github.com/{{ author.github }}" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          {% endif %}
+        </nav>
+      </aside>
+
+      <main class="minimal-light-content">
+        {{ content }}
+      </main>
+    </div>
+  </body>
+</html>

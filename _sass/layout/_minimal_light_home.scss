@@ -1,0 +1,207 @@
+.minimal-light-home {
+  background: #fff;
+  color: #2f2f2f;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.minimal-light-home a {
+  color: #1c7f8c;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.minimal-light-home a:hover {
+  color: #0c4f60;
+  text-decoration: underline;
+}
+
+.minimal-light-shell {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 640px);
+  gap: 56px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 70px 28px 56px;
+}
+
+.minimal-light-sidebar {
+  position: sticky;
+  top: 56px;
+  align-self: start;
+  text-align: center;
+}
+
+.minimal-light-avatar {
+  display: block;
+  width: 118px;
+  height: 118px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.minimal-light-name {
+  margin: 0 0 12px;
+  color: #0b3b54;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.minimal-light-role,
+.minimal-light-affiliation,
+.minimal-light-email {
+  margin: 0 0 4px;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.minimal-light-email {
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.minimal-light-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.minimal-light-links a {
+  color: #0b3b54;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.minimal-light-links a[aria-label="CV"] {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.minimal-light-content {
+  min-width: 0;
+}
+
+.minimal-light-content h2 {
+  margin: 0.75em 0 0.45em;
+  color: #0b3b54;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.minimal-light-content h2:first-child {
+  margin-top: 0;
+}
+
+.minimal-light-content p {
+  margin: 0 0 1em;
+}
+
+.minimal-light-content ul {
+  margin: 0.35em 0 1.35em 1.25em;
+  padding: 0;
+}
+
+.minimal-light-content li {
+  margin: 0.2em 0;
+}
+
+.minimal-publications {
+  margin-top: 1.1em;
+}
+
+.minimal-publication {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin: 0 0 34px;
+}
+
+.minimal-publication-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 168px;
+  height: 104px;
+  margin-top: 6px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #0b3b54, #1c7f8c);
+  box-shadow: 0 5px 15px rgba(11, 59, 84, 0.18);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.minimal-publication-title {
+  margin: 0 0 0.25em;
+  color: #1c7f8c;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.minimal-publication-authors,
+.minimal-publication-venue {
+  margin: 0 0 0.25em;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.minimal-publication-venue {
+  color: #555;
+  font-style: italic;
+}
+
+.minimal-publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 6px;
+}
+
+.minimal-publication-links a,
+.minimal-publication-links span {
+  display: inline-block;
+  border: 1px solid #666;
+  padding: 1px 6px;
+  color: #1f1f1f;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.minimal-publication-links span {
+  border-color: transparent;
+  color: #8a2a2a;
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .minimal-light-shell {
+    display: block;
+    padding: 36px 22px 44px;
+  }
+
+  .minimal-light-sidebar {
+    position: static;
+    margin-bottom: 34px;
+  }
+
+  .minimal-publication {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .minimal-publication-thumb {
+    width: 100%;
+    max-width: 240px;
+  }
+}

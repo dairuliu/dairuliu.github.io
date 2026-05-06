@@ -63,7 +63,7 @@
   {% if cv.basics.summary %}
   <!-- Summary -->
   <div class="cv-section">
-    <h2>Summary</h2>
+    <h2>{{ cv.basics.summaryTitle | default: "Summary" }}</h2>
     <p>{{ cv.basics.summary }}</p>
   </div>
   {% endif %}
@@ -76,11 +76,13 @@
       {% for education in cv.education %}
       <li class="cv-item">
         <div class="cv-item-header">
-          <div class="cv-item-title">{{ education.area }}</div>
-          <div class="cv-item-date">{{ education.endDate }}</div>
+          <div class="cv-item-title">{% if education.area %}{{ education.area }}{% else %}{{ education.institution }}{% endif %}</div>
+          <div class="cv-item-date">{% if education.startDate and education.endDate %}{{ education.startDate }} - {{ education.endDate }}{% else %}{{ education.endDate }}{% endif %}</div>
         </div>
         <div class="cv-item-content">
+          {% if education.area %}
           <div class="cv-item-subtitle">{{ education.institution }}</div>
+          {% endif %}
           {% if education.gpa %}
           <div class="cv-item-detail">GPA: {{ education.gpa }}</div>
           {% endif %}
@@ -99,7 +101,7 @@
   {% if cv.work.size > 0 %}
   <!-- Work Experience -->
   <div class="cv-section">
-    <h2>Work Experience</h2>
+    <h2>{{ cv.workTitle | default: "Work Experience" }}</h2>
     <ul class="cv-list">
       {% for work in cv.work %}
       <li class="cv-item">
@@ -158,8 +160,18 @@
         </div>
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ publication.publisher }}</div>
+          {% if publication.authors %}
+          <div class="cv-item-detail"><em>{{ publication.authors }}</em></div>
+          {% endif %}
           {% if publication.summary %}
           <div class="cv-item-detail">{{ publication.summary }}</div>
+          {% endif %}
+          {% if publication.highlights.size > 0 %}
+          <ul class="cv-highlights">
+            {% for highlight in publication.highlights %}
+            <li>{{ highlight }}</li>
+            {% endfor %}
+          </ul>
           {% endif %}
           {% if publication.website %}
           <div class="cv-item-detail">
@@ -173,6 +185,48 @@
   </div>
   {% endif %}
   
+  {% if cv.awards.size > 0 %}
+  <!-- Awards -->
+  <div class="cv-section">
+    <h2>Honours and Awards</h2>
+    <ul class="cv-list">
+      {% for award in cv.awards %}
+      <li class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-item-title">{{ award.title }}</div>
+          <div class="cv-item-date">{{ award.date }}</div>
+        </div>
+        {% if award.summary %}
+        <div class="cv-item-content">
+          <div class="cv-item-detail">{{ award.summary }}</div>
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if cv.leadership.size > 0 %}
+  <!-- Leadership and Services -->
+  <div class="cv-section">
+    <h2>Leadership and Services</h2>
+    <ul class="cv-list">
+      {% for item in cv.leadership %}
+      <li class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-item-title">{{ item.role }}</div>
+          <div class="cv-item-date">{{ item.date }}</div>
+        </div>
+        <div class="cv-item-content">
+          <div class="cv-item-subtitle">{{ item.organization }}</div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
   {% if cv.presentations.size > 0 %}
   <!-- Presentations/Talks -->
   <div class="cv-section">
