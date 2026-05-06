@@ -47,7 +47,6 @@ Currently, I am a research intern at **GALBOT**, advised by Prof. [**Li Yi**](ht
       <div class="minimal-publication-links">
         <a href="https://arxiv.org/abs/2505.20164">Paper</a>
         <a href="https://github.com/THUNLP-MT/VAT">Code</a>
-        <span>11 citations</span>
       </div>
     </div>
   </article>
