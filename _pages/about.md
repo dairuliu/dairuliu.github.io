@@ -94,14 +94,3 @@ I am currently a research intern at **GALBOT**, advised by Prof. [**Li Yi**](htt
     </div>
   </article>
 </div>
-
-## Language
-
-* Mandarin Chinese: Native.
-* English: IELTS 7.0 (L 7.5, R 8.0, S 6.0, W 6.0); CET-6 608.
-
-## Extracurricular Activities
-
-* Vice President, Quantitative Finance & Investment Society, Nankai University.
-* Member, University Ski Team, Nankai University.
-* Academic Department Vice-Head, Psychology Association, Nankai University.
