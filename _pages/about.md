@@ -11,10 +11,11 @@ redirect_from:
 
 ## About Me
 
-I am a junior undergraduate student at **Nankai University**, majoring in Software Engineering. My research goal is to leverage large-scale human and multimodal data to build generalizable embodied agents capable of performing diverse real-world tasks. I am particularly interested in **robot learning**, **humanoid whole-body control**, **loco-manipulation**, and **multimodal reasoning**.
+I am a junior undergraduate student at **Nankai University**, majoring in Software Engineering. 
 
-I am currently a research intern at **GALBOT**, advised by Prof. [**Li Yi**](https://ericyi.github.io), where I work on scaling humanoid motion tracking and developing human-aligned whole-body control policies. I am also a research intern at **THUNLP &#124; AIR, Tsinghua University**, working with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/), where I study multimodal reasoning, active perception, and self-evolving agents.
+I am currently a research intern at **GALBOT**, advised by Prof. [**Li Yi**](https://ericyi.github.io), where I work on scaling humanoid motion tracking and developing human-aligned whole-body control policies. I am also a research intern at **THUNLP, Tsinghua University**, working with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/), where I study multimodal reasoning.
 
+My research focuses on building generalizable embodied agents that can perceive, reason, and act in complex real-world environments.
 
 ## Research Interests
 
