@@ -50,9 +50,14 @@ My research focuses on building generalizable embodied agents that can perceive,
       <span class="minimal-publication-badge">CVPR</span>
     </div>
     <div>
-      <p class="minimal-publication-title">Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking</p>
+      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2606.03985">Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking</a></p>
       <p class="minimal-publication-authors">Zekun Qi*, Xuchuan Chen*, <strong>Dairu Liu*</strong>, Chenghuai Lin*, Yunrui Lian, Zhikai Zhang, Wenyao Zhang, Yu Guan, Jilong Wang, Xinqiang Yu, He Wang&dagger;, Li Yi&dagger;</p>
       <p class="minimal-publication-venue"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2026.</em></p>
+      <div class="minimal-publication-links">
+        <a href="https://arxiv.org/abs/2606.03985">Paper</a>
+        <a href="https://qizekun.github.io/Humanoid-GPT">Project</a>
+        <a href="https://github.com/GalaxyGeneralRobotics/Humanoid-GPT">Code</a>
+      </div>
     </div>
   </article>
 
@@ -62,9 +67,12 @@ My research focuses on building generalizable embodied agents that can perceive,
       <span class="minimal-publication-badge">ICML</span>
     </div>
     <div>
-      <p class="minimal-publication-title">LIMMT: Less is More for Motion Tracking</p>
+      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2606.06953">LIMMT: Less is More for Motion Tracking</a></p>
       <p class="minimal-publication-authors">Yu Guan*, Zekun Qi*, Chenghuai Lin, Xuchuan Chen, <strong>Dairu Liu</strong>, Wenyao Zhang, Jilong Wang, Xinqiang Yu, He Wang&dagger;, Li Yi&dagger;</p>
       <p class="minimal-publication-venue"><em>International Conference on Machine Learning <strong>(ICML)</strong>, 2026.</em></p>
+      <div class="minimal-publication-links">
+        <a href="https://arxiv.org/abs/2606.06953">Paper</a>
+      </div>
     </div>
   </article>
 
@@ -79,7 +87,7 @@ My research focuses on building generalizable embodied agents that can perceive,
       <p class="minimal-publication-venue"><em>NeurIPS 2025 Workshop.</em></p>
       <div class="minimal-publication-links">
         <a href="https://arxiv.org/abs/2505.20164">Paper</a>
-        <a href="https://github.com/THUNLP-MT/VAT">Code</a>
+        <a href="https://github.com/THUNLP-MT/VAT">Project</a>
       </div>
     </div>
   </article>
@@ -90,8 +98,12 @@ My research focuses on building generalizable embodied agents that can perceive,
       <span class="minimal-publication-badge">In Submission</span>
     </div>
     <div>
-      <p class="minimal-publication-title">Evaluating Time Awareness and Cross-modal Active Perception of Large Models via 4D Escape Room Task</p>
+      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2603.15467">Evaluating Time Awareness and Cross-modal Active Perception of Large Models via 4D Escape Room Task</a></p>
       <p class="minimal-publication-authors">Yurui Dong*, Ziyue Wang*, <strong>Dairu Liu*</strong>, Shuyun Lu*, Xuechen Liu*, Fuwen Luo, Peng Li&dagger;, Yang Liu&dagger;</p>
+      <div class="minimal-publication-links">
+        <a href="https://arxiv.org/abs/2603.15467">Paper</a>
+        <a href="https://github.com/THUNLP-MT/EscapeCraft-4D">Project</a>
+      </div>
     </div>
   </article>
 </div>
