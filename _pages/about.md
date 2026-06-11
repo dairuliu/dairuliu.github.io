@@ -17,6 +17,8 @@ I am currently a research intern at **GALBOT**, advised by Prof. [**Li Yi**](htt
 
 My research focuses on building generalizable embodied agents that can perceive, reason, and act in complex real-world environments.
 
+<p style="color: red;">I am applying for a PhD position in 2027 Fall. Please drop me an email if you are interested in anything about me.</p>
+
 ## Research Interests
 
 * **Robot Learning:** scaling up robot data, efficient robot learning algorithms, humanoid whole-body control, and loco-manipulation.
