@@ -17,7 +17,7 @@ I am currently a research intern at **GALBOT**, advised by Prof. [**Li Yi**](htt
 
 My research focuses on building generalizable embodied agents that can perceive, reason, and act in complex real-world environments.
 
-<p style="color: red;">I am applying for PhD positions starting in Fall 2027. Please feel free to contact me if you are interested in my work.</p>
+<p style="color: red;">Please feel free to contact me if you are interested in my work or would like to chat about any topic.</p>
 
 ## Research Interests
 
@@ -26,6 +26,7 @@ My research focuses on building generalizable embodied agents that can perceive,
 
 ## News
 
+* **[2026-06]** One paper accepted to **ECCV 2026**.
 * **[2026-05]** One paper accepted to **ICML 2026**.
 * **[2026-02]** One paper accepted to **CVPR 2026**.
 * **[2025-12]** Started my research internship at **GALBOT**.
