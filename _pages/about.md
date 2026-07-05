@@ -17,7 +17,7 @@ I am currently a research intern at **GALBOT**, advised by Prof. [**Li Yi**](htt
 
 My research focuses on building generalizable embodied agents that can perceive, reason, and act in complex real-world environments.
 
-<p style="color: red;">Please feel free to contact me if you are interested in my work or would like to chat about any topic.</p>
+**Please feel free to contact me if you are interested in my work or would like to chat about any topic.**
 
 ## Research Interests
 
@@ -39,7 +39,7 @@ My research focuses on building generalizable embodied agents that can perceive,
   <article class="minimal-publication">
     <div class="minimal-publication-media">
       <img src="{{ base_path }}/images/teasers/humantracker_teaser.png" alt="HumanTracker teaser">
-      <span class="minimal-publication-badge">ECCV 2026</span>
+      <span class="minimal-publication-badge">ECCV</span>
     </div>
     <div>
       <p class="minimal-publication-title">HumanTracker: Towards Comprehensive and Human-Aligned Motion Tracking Benchmark</p>
