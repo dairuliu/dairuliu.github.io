@@ -38,11 +38,12 @@ My research focuses on building generalizable embodied agents that can perceive,
   <article class="minimal-publication">
     <div class="minimal-publication-media">
       <img src="{{ base_path }}/images/teasers/humantracker_teaser.png" alt="HumanTracker teaser">
-      <span class="minimal-publication-badge">In Submission</span>
+      <span class="minimal-publication-badge">ECCV 2026</span>
     </div>
     <div>
       <p class="minimal-publication-title">HumanTracker: Towards Comprehensive and Human-Aligned Motion Tracking Benchmark</p>
       <p class="minimal-publication-authors"><strong>Dairu Liu*</strong>, Zekun Qi*, Jiayu Zeng*, Yu Guan, Chenghuai Lin, Xuchuan Chen, Xinqiang Yu, Wenyao Zhang, He Wang&dagger;, Li Yi&dagger;</p>
+      <p class="minimal-publication-venue"><em>European Conference on Computer Vision <strong>(ECCV)</strong>, 2026.</em></p>
     </div>
   </article>
 

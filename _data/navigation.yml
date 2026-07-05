@@ -4,8 +4,7 @@
 # links. Removing a link prevents it from showing in the header, but does not
 # prevent it from being included in the site.
 #
-# NOTE that only one of the CV options should be selected, the first is for the
-#      Markdown formatted page while the second is generated using JSON.
+# CV content is generated from `_data/cv.json`.
 
 main:
   - title: "Publications"
@@ -22,9 +21,6 @@ main:
         
   # - title: "Blog Posts"
   #   url: /year-archive/
-    
-  # - title: "CV"
-  #   url: /cv/
     
   # - title: "CV"
   #   url: /cv-json/
