@@ -13,7 +13,7 @@ redirect_from:
 
 I am a junior undergraduate student at **Nankai University**, majoring in Software Engineering. 
 
-I am currently a research intern at **GALBOT**, advised by Prof. [**Li Yi**](https://ericyi.github.io), where I work on scaling humanoid motion tracking and developing human-aligned whole-body control policies. I am also a research intern at **THUNLP, Tsinghua University**, working with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/), where I study multimodal reasoning.
+I am currently a research intern at **GALBOT**, advised by Prof. [**He Wang**](https://hughw19.github.io) and Prof. [**Li Yi**](https://ericyi.github.io), where I work on scaling humanoid motion tracking and developing human-aligned whole-body control policies. I am also a research intern at **THUNLP, Tsinghua University**, working with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/), where I study multimodal reasoning.
 
 My research focuses on building generalizable embodied agents that can perceive, reason, and act in complex real-world environments.
 
