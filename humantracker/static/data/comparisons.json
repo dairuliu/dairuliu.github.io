@@ -1,0 +1,143 @@
+{
+  "calibration": {
+    "setting": "zero_shot",
+    "score_field": "rm_score_keep_tail",
+    "formula": "100 * sigmoid((rm_score - median) / scale)",
+    "median": 0.089471,
+    "scale": 2.283993
+  },
+  "motions": {
+    "01120": {
+      "category": "Daily",
+      "file_name": "Take 2026-01-06 09.53.53 PM_wufengchao_120Hz_29dof.npz",
+      "media": {"frames": 421, "fps": 50, "duration_seconds": 8.42, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -1.1175105720758438, "human_score": 37.0877914494},
+        "hgpt": {"rm_score": 1.6906131505966187, "human_score": 66.8415566809},
+        "sonic": {"rm_score": -0.10419624298810959, "human_score": 47.8814373662},
+        "twist2": {"rm_score": 1.1411499232053757, "human_score": 61.3122413154}
+      }
+    },
+    "00480": {
+      "category": "Daily",
+      "file_name": "Take 2026-01-06 10.32.11 PM_wufengchao_120Hz_29dof.npz",
+      "media": {"frames": 749, "fps": 50, "duration_seconds": 14.98, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -1.9750523964564006, "human_score": 28.8247718721786},
+        "hgpt": {"rm_score": 2.431114117304484, "human_score": 73.5992211977045},
+        "sonic": {"rm_score": 0.30009788274765015, "human_score": 52.3038352157789},
+        "twist2": {"rm_score": 0.8431399265925089, "human_score": 58.1754182032168}
+      }
+    },
+    "00400": {
+      "category": "Daily",
+      "file_name": "Take 2026-01-06 09.50.41 PM_wufengchao_120Hz_29dof.npz",
+      "media": {"frames": 408, "fps": 50, "duration_seconds": 8.16, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -2.135470896109305, "human_score": 27.4054953462827},
+        "hgpt": {"rm_score": 0.30182209610939026, "human_score": 52.3226676152629},
+        "sonic": {"rm_score": -0.18753837049007416, "human_score": 46.9716379133924},
+        "twist2": {"rm_score": 0.008873939514160156, "human_score": 49.1178968362538}
+      }
+    },
+    "00280": {
+      "category": "HighlyDynamic",
+      "file_name": "Tennis_034.npz",
+      "media": {"frames": 1453, "fps": 50, "duration_seconds": 29.06, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -12.009646892547607, "human_score": 0.4979899065},
+        "hgpt": {"rm_score": -3.913018266359965, "human_score": 14.7743644607},
+        "sonic": {"rm_score": -2.9146504998207092, "human_score": 21.1602372400},
+        "twist2": {"rm_score": -10.277880668640137, "human_score": 1.0569734497}
+      }
+    },
+    "00300": {
+      "category": "HighlyDynamic",
+      "file_name": "Take 2026-01-20 10.17.16 AM_wangqihao_120Hz_29dof.npz",
+      "media": {"frames": 1994, "fps": 50, "duration_seconds": 39.88, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -12.711872935295105, "human_score": 0.3666630670},
+        "hgpt": {"rm_score": 3.5067963898181915, "human_score": 81.7008021593},
+        "sonic": {"rm_score": 1.0611452274024487, "human_score": 60.4781353957},
+        "twist2": {"rm_score": -3.359508328139782, "human_score": 18.0929067014}
+      }
+    },
+    "00320": {
+      "category": "HighlyDynamic",
+      "file_name": "Default_026.npz",
+      "media": {"frames": 3728, "fps": 50, "duration_seconds": 74.56, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -9.464105193068583, "human_score": 1.5025906565},
+        "hgpt": {"rm_score": -1.3791576653718949, "human_score": 34.4566607570},
+        "sonic": {"rm_score": -0.06057103375593821, "human_score": 48.3582688573},
+        "twist2": {"rm_score": -5.603319474061331, "human_score": 7.6387550865}
+      }
+    },
+    "02900": {
+      "category": "Interaction",
+      "file_name": "Take 2025-12-04 02.45.15 PM_wangyingjie_120Hz_29dof.npz",
+      "media": {"frames": 557, "fps": 50, "duration_seconds": 11.14, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -7.374478419621785, "human_score": 3.6687603729},
+        "hgpt": {"rm_score": 2.4287188053131104, "human_score": 73.5788383558},
+        "sonic": {"rm_score": 2.086293637752533, "human_score": 70.5633062013},
+        "twist2": {"rm_score": -0.2587779362996419, "human_score": 46.1955244617}
+      }
+    },
+    "04060": {
+      "category": "Interaction",
+      "file_name": "Take 2026-01-14 10.52.38 AM_muxiao_120Hz_29dof.npz",
+      "media": {"frames": 365, "fps": 50, "duration_seconds": 7.30, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -0.4714230000972748, "human_score": 43.8912679553260},
+        "hgpt": {"rm_score": 0.7082532867789268, "human_score": 56.7319061686280},
+        "sonic": {"rm_score": 0.3525345027446747, "human_score": 52.8762465218569},
+        "twist2": {"rm_score": 0.200434984639287, "human_score": 51.2143443930171}
+      }
+    },
+    "04560": {
+      "category": "Interaction",
+      "file_name": "Take 2026-01-14 09.53.43 AM_muxiao_120Hz_29dof.npz",
+      "media": {"frames": 455, "fps": 50, "duration_seconds": 9.10, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -0.3671219199895859, "human_score": 45.0188292352895},
+        "hgpt": {"rm_score": 0.24829065054655075, "human_score": 51.7376989233455},
+        "sonic": {"rm_score": 0.45607487112283707, "human_score": 54.0041586266651},
+        "twist2": {"rm_score": 0.6070649176836014, "human_score": 55.6413276831866}
+      }
+    },
+    "02660": {
+      "category": "Ground",
+      "file_name": "roll-over_take075_chr01_90Hz_29dof.npz",
+      "media": {"frames": 531, "fps": 50, "duration_seconds": 10.62, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -10.054368019104004, "human_score": 1.1643744550},
+        "hgpt": {"rm_score": -6.7766785224278765, "human_score": 4.7146370433},
+        "sonic": {"rm_score": 2.3221035401026406, "human_score": 72.6614435652},
+        "twist2": {"rm_score": -11.377620379130045, "human_score": 0.6557066294}
+      }
+    },
+    "02480": {
+      "category": "Ground",
+      "file_name": "burpee_take110_chr01_90Hz_29dof.npz",
+      "media": {"frames": 598, "fps": 50, "duration_seconds": 11.96, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -7.413881063461304, "human_score": 3.6082751995},
+        "hgpt": {"rm_score": -7.220837434132894, "human_score": 3.9140508093},
+        "sonic": {"rm_score": -4.276670475800832, "human_score": 12.8798236967},
+        "twist2": {"rm_score": -4.799113680919011, "human_score": 10.5234768448}
+      }
+    },
+    "02540": {
+      "category": "Ground",
+      "file_name": "crawl_take022_chr01_90Hz_29dof.npz",
+      "media": {"frames": 632, "fps": 50, "duration_seconds": 12.64, "resolution": "2560x1440"},
+      "scores": {
+        "gmt": {"rm_score": -6.027001619338989, "human_score": 6.4285671789},
+        "hgpt": {"rm_score": -6.1331491867701216, "human_score": 6.1546055817},
+        "sonic": {"rm_score": 5.214113235473633, "human_score": 90.4107512398},
+        "twist2": {"rm_score": -5.686839818954468, "human_score": 7.3847243047}
+      }
+    }
+  }
+}

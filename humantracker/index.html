@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HumanTracker introduces a 150-hour humanoid motion tracking benchmark and HumanScore, a preference-aligned metric for evaluating trajectory quality.">
+  <meta name="keywords" content="HumanTracker, HumanScore, humanoid, motion tracking, benchmark, reward model, robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f6f2">
+  <link rel="icon" href="data:,">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HumanTracker: Towards Comprehensive and Human-Aligned Motion Tracking Benchmark">
+  <meta property="og:description" content="150+ hours of categorized motion capture and a preference-aligned metric for humanoid motion tracking.">
+  <meta property="og:url" content="https://dairuliu.github.io/humantracker/">
+  <meta property="og:image" content="https://dairuliu.github.io/humantracker/static/images/teaser.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>HumanTracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+  <nav class="navbar site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container page-container">
+      <div class="navbar-brand">
+        <a class="navbar-item wordmark" href="#top" aria-label="HumanTracker home">HumanTracker</a>
+        <button class="navbar-burger" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false" data-target="site-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div id="site-menu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#overview">Overview</a>
+          <a class="navbar-item" href="#humanscore">HumanScore</a>
+          <a class="navbar-item" href="#comparisons">Comparisons</a>
+          <a class="navbar-item" href="#benchmark">Benchmark</a>
+          <a class="navbar-item" href="#citation">Citation</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero publication-hero">
+      <div class="hero-body">
+        <div class="container page-container has-text-centered">
+          <h1 class="title publication-title">
+            <span class="brand-name">HumanTracker</span>
+            <span class="paper-title">Towards Comprehensive and Human-Aligned Motion Tracking Benchmark</span>
+          </h1>
+
+          <div class="publication-authors" aria-label="Authors">
+            <span>Dairu Liu<sup>1,3,*</sup></span>
+            <span>Zekun Qi<sup>2,3,*</sup></span>
+            <span>Jiayu Zeng<sup>3,*</sup></span>
+            <span>Ruixi Yu<sup>2,3</sup></span>
+            <span>Yu Guan<sup>2,3</sup></span>
+            <span>Yintianrun Zhang<sup>3</sup></span>
+            <span>Xuchuan Chen<sup>2,3</sup></span>
+            <span>Sikai Liang<sup>3,4</sup></span>
+            <span>Zekai Li<sup>2,3</sup></span>
+            <span>Chenghuai Lin<sup>3</sup></span>
+            <span>Xinqiang Yu<sup>3</sup></span>
+            <span>Wenyao Zhang<sup>4</sup></span>
+            <span>He Wang<sup>3,5,†</sup></span>
+            <span>Li Yi<sup>2,3,6,†</sup></span>
+          </div>
+
+          <div class="affiliations">
+            <span><sup>1</sup>Nankai University</span>
+            <span><sup>2</sup>Tsinghua University</span>
+            <span><sup>3</sup>Galbot</span>
+            <span><sup>4</sup>Shanghai Jiao Tong University</span>
+            <span><sup>5</sup>Peking University</span>
+            <span><sup>6</sup>Shanghai Qi Zhi Institute</span>
+          </div>
+          <p class="contributions"><sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Corresponding authors</p>
+
+          <div class="publication-links" aria-label="Project links">
+            <a href="./static/paper/humantracker.pdf" class="button is-rounded is-dark">
+              <span>Paper · PDF</span>
+            </a>
+            <span class="button is-rounded is-light coming-soon" aria-disabled="true">
+              <span>Code · Coming Soon</span>
+            </span>
+            <span class="button is-rounded is-light coming-soon" aria-disabled="true">
+              <span>Dataset · Coming Soon</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section teaser-section" aria-labelledby="teaser-heading">
+      <div class="container page-container">
+        <h2 id="teaser-heading" class="is-sr-only">HumanTracker overview</h2>
+        <figure class="paper-figure teaser-figure">
+          <img src="./static/images/teaser.webp" width="2513" height="1250" alt="HumanTracker overview showing the HumanScore reward model and four-category evaluation benchmark">
+          <figcaption>
+            HumanTracker combines a preference-aligned trajectory metric with a large, category-aware benchmark for humanoid motion tracking.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="overview" class="section section-rule">
+      <div class="container page-container">
+        <div class="section-heading">
+          <h2 class="title is-2">Tracking quality should agree with what people see.</h2>
+        </div>
+        <div class="columns is-variable is-7 overview-copy">
+          <div class="column is-7">
+            <div class="content is-medium">
+              <p>
+                Kinematic errors average frame-level pose differences, but often miss the physical artifacts that matter most in video: unstable support, foot skating, incorrect contact timing, and failed recoveries.
+              </p>
+              <p>
+                HumanTracker addresses both sides of evaluation. Its benchmark supplies broad, diagnostic motion coverage, while <strong>HumanScore</strong> learns trajectory-level quality from human preferences and predicts which rollout people prefer.
+              </p>
+            </div>
+          </div>
+          <div class="column is-5">
+            <div class="key-claim">
+              <span class="key-value">90.97%</span>
+              <span class="key-label">alignment with held-out human preferences</span>
+              <span class="key-note">6.21 points above the strongest conventional diagnostic.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-grid" aria-label="Benchmark highlights">
+          <div class="stat"><strong>150+</strong><span>hours of optical motion</span></div>
+          <div class="stat"><strong>24.6K</strong><span>labeled motion clips</span></div>
+          <div class="stat"><strong>24</strong><span>professional performers</span></div>
+          <div class="stat"><strong>4</strong><span>diagnostic motion families</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="humanscore" class="section section-rule">
+      <div class="container page-container">
+        <div class="section-heading">
+          <h2 class="title is-2">HumanScore learns the temporal evidence behind human judgments.</h2>
+        </div>
+
+        <div class="columns is-variable is-7 is-vcentered method-block">
+          <div class="column is-7">
+            <figure class="method-figure">
+              <img src="./static/images/humanscore-architecture.png" loading="lazy" alt="HumanScore trajectory model from the paper: preference learning and masked temporal trajectory scoring">
+            </figure>
+          </div>
+          <div class="column is-5">
+            <div class="content method-copy">
+              <p><strong>6,000 comparisons.</strong> Human annotations cover 12,000 synchronized tracker trajectories with strict preferences, ties, and cannot-compare pairs.</p>
+              <p><strong>Five-second context.</strong> Each 250-frame window is encoded as an 850-dimensional trajectory token sequence with explicit padding masks.</p>
+              <p><strong>Readable output.</strong> Raw reward-model predictions are calibrated to a 0–100 HumanScore within each evaluation setting.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="evidence-grid">
+          <div class="alignment-card">
+            <h3>Held-out preference alignment</h3>
+            <div class="metric-row"><span>HumanScore</span><div class="bar"><i style="width: 90.97%"></i></div><strong>90.97</strong></div>
+            <div class="metric-row"><span>KPT position MAE</span><div class="bar"><i style="width: 84.76%"></i></div><strong>84.76</strong></div>
+            <div class="metric-row"><span>Joint velocity error</span><div class="bar"><i style="width: 84.66%"></i></div><strong>84.66</strong></div>
+            <div class="metric-row"><span>Foot contact accuracy</span><div class="bar"><i style="width: 82.78%"></i></div><strong>82.78</strong></div>
+            <div class="metric-row"><span>MPJPE</span><div class="bar"><i style="width: 81.73%"></i></div><strong>81.73</strong></div>
+            <p>Alignment rate (%) on 1,916 strict, motion-disjoint preference pairs.</p>
+          </div>
+          <div class="ablation-card">
+            <h3>What the model uses</h3>
+            <div class="ablation-images">
+              <figure><img src="./static/images/masking-ablation.png" width="1288" height="644" loading="lazy" alt="HumanScore feature masking ablation from the paper"><figcaption>Contact and reference features contribute complementary evidence.</figcaption></figure>
+              <figure><img src="./static/images/temporal-ablation.png" width="1288" height="643" loading="lazy" alt="HumanScore temporal context ablation from the paper"><figcaption>Longer temporal context captures sliding, drift, and recovery.</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparisons" class="section comparison-section">
+      <div class="container page-container">
+        <div class="section-heading centered-heading light-heading">
+          <h2 class="title is-2">See what HumanScore sees.</h2>
+          <p class="section-intro">Each grid synchronizes four zero-shot rollouts of the same reference motion. A failed rollout holds on its final frame while the remaining trackers continue.</p>
+        </div>
+
+        <div class="motion-tabs" role="tablist" aria-label="Select motion family">
+          <button id="tab-daily" class="motion-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-daily" data-motion="daily">Daily</button>
+          <button id="tab-dynamic" class="motion-tab" type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-dynamic" data-motion="dynamic">Highly Dynamic</button>
+          <button id="tab-interaction" class="motion-tab" type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-interaction" data-motion="interaction">Interaction</button>
+          <button id="tab-ground" class="motion-tab" type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-ground" data-motion="ground">Ground</button>
+        </div>
+
+        <div id="panel-daily" class="comparison-panel is-active" role="tabpanel" aria-labelledby="tab-daily" data-panel="daily">
+          <div class="motion-page is-active" data-motion-id="01120">
+            <div class="motion-meta"><div><span class="motion-family">Daily</span><h3>Rhythmic whole-body movement</h3></div><span class="motion-id">Motion 01120 · 8.42 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01120/gmt.webp" data-src="./static/videos/01120/gmt.mp4" aria-label="GMT rollout for Daily motion 01120"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>37.09</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01120/hgpt.webp" data-src="./static/videos/01120/hgpt.mp4" aria-label="Humanoid-GPT rollout for Daily motion 01120"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>66.84</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01120/sonic.webp" data-src="./static/videos/01120/sonic.mp4" aria-label="SONIC rollout for Daily motion 01120"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>47.88</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01120/twist2.webp" data-src="./static/videos/01120/twist2.mp4" aria-label="TWIST2 rollout for Daily motion 01120"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>61.31</strong></p></div></article>
+            </div>
+          </div>
+          <div class="motion-page" data-motion-id="00480">
+            <div class="motion-meta"><div><span class="motion-family">Daily</span><h3>Routine locomotion and turns</h3></div><span class="motion-id">Motion 00480 · 14.98 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00480/gmt.webp" data-src="./static/videos/00480/gmt.mp4" aria-label="GMT rollout for Daily motion 00480"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>28.82</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00480/hgpt.webp" data-src="./static/videos/00480/hgpt.mp4" aria-label="Humanoid-GPT rollout for Daily motion 00480"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>73.60</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00480/sonic.webp" data-src="./static/videos/00480/sonic.mp4" aria-label="SONIC rollout for Daily motion 00480"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>52.30</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00480/twist2.webp" data-src="./static/videos/00480/twist2.mp4" aria-label="TWIST2 rollout for Daily motion 00480"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>58.18</strong></p></div></article>
+            </div>
+          </div>
+          <div class="motion-page" data-motion-id="00400">
+            <div class="motion-meta"><div><span class="motion-family">Daily</span><h3>Short everyday transfer</h3></div><span class="motion-id">Motion 00400 · 8.16 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00400/gmt.webp" data-src="./static/videos/00400/gmt.mp4" aria-label="GMT rollout for Daily motion 00400"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>27.41</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00400/hgpt.webp" data-src="./static/videos/00400/hgpt.mp4" aria-label="Humanoid-GPT rollout for Daily motion 00400"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>52.32</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00400/sonic.webp" data-src="./static/videos/00400/sonic.mp4" aria-label="SONIC rollout for Daily motion 00400"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>46.97</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00400/twist2.webp" data-src="./static/videos/00400/twist2.mp4" aria-label="TWIST2 rollout for Daily motion 00400"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>49.12</strong></p></div></article>
+            </div>
+          </div>
+        </div>
+
+        <div id="panel-dynamic" class="comparison-panel" role="tabpanel" aria-labelledby="tab-dynamic" data-panel="dynamic" hidden>
+          <div class="motion-page is-active" data-motion-id="00280">
+            <div class="motion-meta"><div><span class="motion-family">Highly Dynamic</span><h3>Rapid tennis change of direction</h3></div><span class="motion-id">Motion 00280 · 29.06 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00280/gmt.webp" data-src="./static/videos/00280/gmt.mp4" aria-label="GMT rollout for Highly Dynamic motion 00280"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>0.50</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00280/hgpt.webp" data-src="./static/videos/00280/hgpt.mp4" aria-label="Humanoid-GPT rollout for Highly Dynamic motion 00280"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>14.77</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00280/sonic.webp" data-src="./static/videos/00280/sonic.mp4" aria-label="SONIC rollout for Highly Dynamic motion 00280"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>21.16</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00280/twist2.webp" data-src="./static/videos/00280/twist2.mp4" aria-label="TWIST2 rollout for Highly Dynamic motion 00280"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>1.06</strong></p></div></article>
+            </div>
+          </div>
+          <div class="motion-page" data-motion-id="00300">
+            <div class="motion-meta"><div><span class="motion-family">Highly Dynamic</span><h3>Whole-body acceleration sequence</h3></div><span class="motion-id">Motion 00300 · 39.88 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00300/gmt.webp" data-src="./static/videos/00300/gmt.mp4" aria-label="GMT rollout for Highly Dynamic motion 00300"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>0.37</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00300/hgpt.webp" data-src="./static/videos/00300/hgpt.mp4" aria-label="Humanoid-GPT rollout for Highly Dynamic motion 00300"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>81.70</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00300/sonic.webp" data-src="./static/videos/00300/sonic.mp4" aria-label="SONIC rollout for Highly Dynamic motion 00300"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>60.48</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00300/twist2.webp" data-src="./static/videos/00300/twist2.mp4" aria-label="TWIST2 rollout for Highly Dynamic motion 00300"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>18.09</strong></p></div></article>
+            </div>
+          </div>
+          <div class="motion-page" data-motion-id="00320">
+            <div class="motion-meta"><div><span class="motion-family">Highly Dynamic</span><h3>Fast multi-phase motion</h3></div><span class="motion-id">Motion 00320 · 74.56 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00320/gmt.webp" data-src="./static/videos/00320/gmt.mp4" aria-label="GMT rollout for Highly Dynamic motion 00320"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>1.50</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00320/hgpt.webp" data-src="./static/videos/00320/hgpt.mp4" aria-label="Humanoid-GPT rollout for Highly Dynamic motion 00320"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>34.46</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00320/sonic.webp" data-src="./static/videos/00320/sonic.mp4" aria-label="SONIC rollout for Highly Dynamic motion 00320"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>48.36</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00320/twist2.webp" data-src="./static/videos/00320/twist2.mp4" aria-label="TWIST2 rollout for Highly Dynamic motion 00320"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>7.64</strong></p></div></article>
+            </div>
+          </div>
+        </div>
+
+        <div id="panel-interaction" class="comparison-panel" role="tabpanel" aria-labelledby="tab-interaction" data-panel="interaction" hidden>
+          <div class="motion-page is-active" data-motion-id="02900">
+            <div class="motion-meta"><div><span class="motion-family">Interaction</span><h3>Contact-rich coordinated motion</h3></div><span class="motion-id">Motion 02900 · 11.14 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02900/gmt.webp" data-src="./static/videos/02900/gmt.mp4" aria-label="GMT rollout for Interaction motion 02900"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>3.67</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02900/hgpt.webp" data-src="./static/videos/02900/hgpt.mp4" aria-label="Humanoid-GPT rollout for Interaction motion 02900"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>73.58</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02900/sonic.webp" data-src="./static/videos/02900/sonic.mp4" aria-label="SONIC rollout for Interaction motion 02900"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>70.56</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02900/twist2.webp" data-src="./static/videos/02900/twist2.mp4" aria-label="TWIST2 rollout for Interaction motion 02900"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>46.20</strong></p></div></article>
+            </div>
+          </div>
+          <div class="motion-page" data-motion-id="04060">
+            <div class="motion-meta"><div><span class="motion-family">Interaction</span><h3>Object-guided coordination</h3></div><span class="motion-id">Motion 04060 · 7.30 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/04060/gmt.webp" data-src="./static/videos/04060/gmt.mp4" aria-label="GMT rollout for Interaction motion 04060"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>43.89</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/04060/hgpt.webp" data-src="./static/videos/04060/hgpt.mp4" aria-label="Humanoid-GPT rollout for Interaction motion 04060"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>56.73</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/04060/sonic.webp" data-src="./static/videos/04060/sonic.mp4" aria-label="SONIC rollout for Interaction motion 04060"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>52.88</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/04060/twist2.webp" data-src="./static/videos/04060/twist2.mp4" aria-label="TWIST2 rollout for Interaction motion 04060"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>51.21</strong></p></div></article>
+            </div>
+          </div>
+          <div class="motion-page" data-motion-id="04560">
+            <div class="motion-meta"><div><span class="motion-family">Interaction</span><h3>Close-range interaction</h3></div><span class="motion-id">Motion 04560 · 9.10 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/04560/gmt.webp" data-src="./static/videos/04560/gmt.mp4" aria-label="GMT rollout for Interaction motion 04560"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>45.02</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/04560/hgpt.webp" data-src="./static/videos/04560/hgpt.mp4" aria-label="Humanoid-GPT rollout for Interaction motion 04560"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>51.74</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/04560/sonic.webp" data-src="./static/videos/04560/sonic.mp4" aria-label="SONIC rollout for Interaction motion 04560"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>54.00</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/04560/twist2.webp" data-src="./static/videos/04560/twist2.mp4" aria-label="TWIST2 rollout for Interaction motion 04560"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>55.64</strong></p></div></article>
+            </div>
+          </div>
+        </div>
+
+        <div id="panel-ground" class="comparison-panel" role="tabpanel" aria-labelledby="tab-ground" data-panel="ground" hidden>
+          <div class="motion-page is-active" data-motion-id="02660">
+            <div class="motion-meta"><div><span class="motion-family">Ground</span><h3>Roll-over transition</h3></div><span class="motion-id">Motion 02660 · 10.62 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02660/gmt.webp" data-src="./static/videos/02660/gmt.mp4" aria-label="GMT rollout for Ground motion 02660"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>1.16</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02660/hgpt.webp" data-src="./static/videos/02660/hgpt.mp4" aria-label="Humanoid-GPT rollout for Ground motion 02660"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>4.71</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02660/sonic.webp" data-src="./static/videos/02660/sonic.mp4" aria-label="SONIC rollout for Ground motion 02660"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>72.66</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02660/twist2.webp" data-src="./static/videos/02660/twist2.mp4" aria-label="TWIST2 rollout for Ground motion 02660"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>0.66</strong></p></div></article>
+            </div>
+          </div>
+          <div class="motion-page" data-motion-id="02480">
+            <div class="motion-meta"><div><span class="motion-family">Ground</span><h3>Burpee to ground</h3></div><span class="motion-id">Motion 02480 · 11.96 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02480/gmt.webp" data-src="./static/videos/02480/gmt.mp4" aria-label="GMT rollout for Ground motion 02480"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>3.61</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02480/hgpt.webp" data-src="./static/videos/02480/hgpt.mp4" aria-label="Humanoid-GPT rollout for Ground motion 02480"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>3.91</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02480/sonic.webp" data-src="./static/videos/02480/sonic.mp4" aria-label="SONIC rollout for Ground motion 02480"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>12.88</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02480/twist2.webp" data-src="./static/videos/02480/twist2.mp4" aria-label="TWIST2 rollout for Ground motion 02480"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>10.52</strong></p></div></article>
+            </div>
+          </div>
+          <div class="motion-page" data-motion-id="02540">
+            <div class="motion-meta"><div><span class="motion-family">Ground</span><h3>Crawl sequence</h3></div><span class="motion-id">Motion 02540 · 12.64 s</span></div>
+            <div class="tracker-grid">
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02540/gmt.webp" data-src="./static/videos/02540/gmt.mp4" aria-label="GMT rollout for Ground motion 02540"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>GMT</h4><p>HumanScore <strong>6.43</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02540/hgpt.webp" data-src="./static/videos/02540/hgpt.mp4" aria-label="Humanoid-GPT rollout for Ground motion 02540"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p>HumanScore <strong>6.15</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02540/sonic.webp" data-src="./static/videos/02540/sonic.mp4" aria-label="SONIC rollout for Ground motion 02540"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>SONIC</h4><p>HumanScore <strong>90.41</strong></p></div></article>
+              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02540/twist2.webp" data-src="./static/videos/02540/twist2.mp4" aria-label="TWIST2 rollout for Ground motion 02540"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>TWIST2</h4><p>HumanScore <strong>7.38</strong></p></div></article>
+            </div>
+          </div>
+        </div>
+
+        <nav class="motion-pagination" aria-label="Select motion">
+          <button class="motion-page-button is-active" type="button" aria-label="Motion 1" aria-current="page">1</button>
+          <button class="motion-page-button" type="button" aria-label="Motion 2">2</button>
+          <button class="motion-page-button" type="button" aria-label="Motion 3">3</button>
+        </nav>
+
+        <div class="sync-controls" aria-label="Synchronized video controls">
+          <button class="control-button play-toggle" type="button"><span class="icon" aria-hidden="true">▶</span><span>Play synchronized</span></button>
+          <button class="control-button restart-button" type="button"><span class="icon" aria-hidden="true">↻</span><span>Restart</span></button>
+          <output class="time-display">0:00 / 0:00</output>
+          <span class="load-status" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="benchmark" class="section section-soft">
+      <div class="container page-container">
+        <div class="section-heading centered-heading">
+          <h2 class="title is-2">Four families expose different failure regimes.</h2>
+          <p class="section-intro">Every clip includes a family label, a natural-language description, a fitted SMPL sequence, and a robot-space reference trajectory.</p>
+        </div>
+
+        <figure class="paper-figure taxonomy-figure">
+          <img src="./static/images/taxonomy-paper.png" width="1913" height="1448" loading="lazy" alt="Motion taxonomy from the paper showing Daily, Highly Dynamic, Interaction, and Ground families">
+        </figure>
+
+        <div class="family-grid">
+          <article class="family-card daily">
+            <h3>Daily</h3>
+            <p>Steady locomotion, turning, and routine gestures reveal stability and residual drift.</p>
+            <dl><div><dt>Hours</dt><dd>93.73</dd></div><div><dt>Clips</dt><dd>10,304</dd></div></dl>
+          </article>
+          <article class="family-card dynamic">
+            <h3>Highly Dynamic</h3>
+            <p>Jumps, kicks, acrobatics, and fast footwork stress impact handling and phase timing.</p>
+            <dl><div><dt>Hours</dt><dd>9.98</dd></div><div><dt>Clips</dt><dd>1,630</dd></div></dl>
+          </article>
+          <article class="family-card interaction">
+            <h3>Interaction</h3>
+            <p>Object and human interactions require end-effector timing with whole-body stabilization.</p>
+            <dl><div><dt>Hours</dt><dd>43.01</dd></div><div><dt>Clips</dt><dd>11,068</dd></div></dl>
+          </article>
+          <article class="family-card ground">
+            <h3>Ground</h3>
+            <p>Low postures and multi-contact transitions test contact geometry, balance, and recovery.</p>
+            <dl><div><dt>Hours</dt><dd>4.59</dd></div><div><dt>Clips</dt><dd>1,640</dd></div></dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-rule">
+      <div class="container page-container">
+        <div class="section-heading">
+          <h2 class="title is-2">One score, used with complementary diagnostics.</h2>
+        </div>
+        <div class="columns is-variable is-7 guidance-grid">
+          <div class="column">
+            <h3>HumanScore measures perceived quality.</h3>
+            <p>It summarizes trajectory-level preference over contact, stability, smoothness, and reference fidelity. Higher is better within the same evaluation setting.</p>
+          </div>
+          <div class="column">
+            <h3>Success measures completion.</h3>
+            <p>A rollout may look accurate before an early failure. Success prevents a short failed trajectory from being mistaken for robust tracking.</p>
+          </div>
+          <div class="column">
+            <h3>Kinematic errors diagnose pose mismatch.</h3>
+            <p>MPJPE and related errors remain useful for locating specific problems; HumanScore is not a replacement for every analytic diagnostic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="citation" class="section citation-section">
+      <div class="container page-container">
+        <div class="section-heading centered-heading">
+          <h2 class="title is-2">HumanTracker</h2>
+        </div>
+        <div class="citation-box">
+          <button class="copy-button" type="button" data-copy-target="bibtex"><span>Copy BibTeX</span></button>
+          <pre id="bibtex"><code>@misc{liu2026humantracker,
+  title  = {HumanTracker: Towards Comprehensive and Human-Aligned
+            Motion Tracking Benchmark},
+  author = {Liu, Dairu and Qi, Zekun and Zeng, Jiayu and Guan, Yu and
+            Lin, Chenghuai and Chen, Xuchuan and Yu, Xinqiang and
+            Zhang, Wenyao and Wang, He and Yi, Li},
+  year   = {2026}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer site-footer">
+    <div class="container page-container">
+      <div class="footer-grid">
+        <p><strong>HumanTracker</strong><br>Towards comprehensive and human-aligned motion tracking evaluation.</p>
+        <p class="footer-credit">
+          Website template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.<br>
+          Site source is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
