@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="HumanTracker introduces a 150-hour humanoid motion tracking benchmark and HumanScore, a preference-aligned metric for evaluating trajectory quality.">
+  <meta name="description" content="HumanTracker introduces a 153-hour humanoid motion tracking benchmark and HumanScore, a preference-aligned metric for evaluating trajectory quality.">
   <meta name="keywords" content="HumanTracker, HumanScore, humanoid, motion tracking, benchmark, reward model, robotics">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f1f6f2">
@@ -10,7 +10,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="HumanTracker: Towards Comprehensive and Human-Aligned Motion Tracking Benchmark">
-  <meta property="og:description" content="150+ hours of categorized motion capture and a preference-aligned metric for humanoid motion tracking.">
+  <meta property="og:description" content="Approximately 153 hours of categorized optical motion and a preference-aligned metric for humanoid motion tracking.">
   <meta property="og:url" content="https://dairuliu.github.io/humantracker/">
   <meta property="og:image" content="https://dairuliu.github.io/humantracker/static/images/teaser.webp">
   <meta name="twitter:card" content="summary_large_image">
@@ -128,16 +128,16 @@
           </div>
           <div class="column is-5">
             <div class="key-claim">
-              <span class="key-value">90.97%</span>
-              <span class="key-label">alignment with held-out human preferences</span>
-              <span class="key-note">6.21 points above the strongest conventional diagnostic.</span>
+              <span class="key-value">90.89%</span>
+              <span class="key-label">alignment with human preferences on the test set</span>
+              <span class="key-note">6.18 points above the strongest conventional diagnostic.</span>
             </div>
           </div>
         </div>
 
         <div class="stat-grid" aria-label="Benchmark highlights">
-          <div class="stat"><strong>150+</strong><span>hours of optical motion</span></div>
-          <div class="stat"><strong>24.6K</strong><span>labeled motion clips</span></div>
+          <div class="stat"><strong>153</strong><span>hours of optical motion</span></div>
+          <div class="stat"><strong>25K</strong><span>labeled motion clips</span></div>
           <div class="stat"><strong>24</strong><span>professional performers</span></div>
           <div class="stat"><strong>4</strong><span>diagnostic motion families</span></div>
         </div>
@@ -153,33 +153,33 @@
         <div class="columns is-variable is-7 is-vcentered method-block">
           <div class="column is-7">
             <figure class="method-figure">
-              <img src="./static/images/humanscore-architecture.png" loading="lazy" alt="HumanScore trajectory model from the paper: preference learning and masked temporal trajectory scoring">
+              <img src="./static/images/humanscore-architecture.png" width="2085" height="1203" loading="lazy" alt="HumanScore trajectory reward model from the paper with a temporal Transformer and masked max pooling">
             </figure>
           </div>
           <div class="column is-5">
             <div class="content method-copy">
-              <p><strong>6,000 comparisons.</strong> Human annotations cover 12,000 synchronized tracker trajectories with strict preferences, ties, and cannot-compare pairs.</p>
+              <p><strong>12K motion pairs.</strong> Human annotations cover 24K motions with strict preferences, similar judgments, and cannot-compare pairs.</p>
               <p><strong>Five-second context.</strong> Each 250-frame window is encoded as an 850-dimensional trajectory token sequence with explicit padding masks.</p>
-              <p><strong>Readable output.</strong> Raw reward-model predictions are calibrated to a 0–100 HumanScore within each evaluation setting.</p>
+              <p><strong>Readable output.</strong> Window logits pass through a sigmoid, failed remainder windows score zero, and the trajectory average is reported from 0 to 100.</p>
             </div>
           </div>
         </div>
 
         <div class="evidence-grid">
           <div class="alignment-card">
-            <h3>Held-out preference alignment</h3>
-            <div class="metric-row"><span>HumanScore</span><div class="bar"><i style="width: 90.97%"></i></div><strong>90.97</strong></div>
-            <div class="metric-row"><span>KPT position MAE</span><div class="bar"><i style="width: 84.76%"></i></div><strong>84.76</strong></div>
-            <div class="metric-row"><span>Joint velocity error</span><div class="bar"><i style="width: 84.66%"></i></div><strong>84.66</strong></div>
-            <div class="metric-row"><span>Foot contact accuracy</span><div class="bar"><i style="width: 82.78%"></i></div><strong>82.78</strong></div>
-            <div class="metric-row"><span>MPJPE</span><div class="bar"><i style="width: 81.73%"></i></div><strong>81.73</strong></div>
-            <p>Alignment rate (%) on 1,916 strict, motion-disjoint preference pairs.</p>
+            <h3>Test set preference alignment</h3>
+            <div class="metric-row"><span>HumanScore</span><div class="bar"><i style="width: 90.89%"></i></div><strong>90.89</strong></div>
+            <div class="metric-row"><span>KPT position MAE</span><div class="bar"><i style="width: 84.71%"></i></div><strong>84.71</strong></div>
+            <div class="metric-row"><span>Joint velocity error</span><div class="bar"><i style="width: 84.61%"></i></div><strong>84.61</strong></div>
+            <div class="metric-row"><span>Foot contact accuracy</span><div class="bar"><i style="width: 82.93%"></i></div><strong>82.93</strong></div>
+            <div class="metric-row"><span>MPJPE</span><div class="bar"><i style="width: 81.68%"></i></div><strong>81.68</strong></div>
+            <p>Alignment rate (%) on 955 independent, unaugmented, strict-preference comparisons in the motion-disjoint test set.</p>
           </div>
           <div class="ablation-card">
             <h3>What the model uses</h3>
             <div class="ablation-images">
-              <figure><img src="./static/images/masking-ablation.png" width="1288" height="644" loading="lazy" alt="HumanScore feature masking ablation from the paper"><figcaption>Contact and reference features contribute complementary evidence.</figcaption></figure>
-              <figure><img src="./static/images/temporal-ablation.png" width="1288" height="643" loading="lazy" alt="HumanScore temporal context ablation from the paper"><figcaption>Longer temporal context captures sliding, drift, and recovery.</figcaption></figure>
+              <figure><img src="./static/images/masking-ablation.png" width="1608" height="804" loading="lazy" alt="HumanScore feature masking analysis on the test set"><figcaption>Contact and reference features contribute complementary evidence.</figcaption></figure>
+              <figure><img src="./static/images/temporal-ablation.png" width="1608" height="801" loading="lazy" alt="HumanScore temporal context analysis on the test set"><figcaption>Longer temporal context captures sliding, drift, and recovery.</figcaption></figure>
             </div>
           </div>
         </div>
@@ -350,17 +350,17 @@
           <article class="family-card daily">
             <h3>Daily</h3>
             <p>Steady locomotion, turning, and routine gestures reveal stability and residual drift.</p>
-            <dl><div><dt>Hours</dt><dd>93.73</dd></div><div><dt>Clips</dt><dd>10,304</dd></div></dl>
+            <dl><div><dt>Hours</dt><dd>89.29</dd></div><div><dt>Clips</dt><dd>9,739</dd></div></dl>
           </article>
           <article class="family-card dynamic">
             <h3>Highly Dynamic</h3>
             <p>Jumps, kicks, acrobatics, and fast footwork stress impact handling and phase timing.</p>
-            <dl><div><dt>Hours</dt><dd>9.98</dd></div><div><dt>Clips</dt><dd>1,630</dd></div></dl>
+            <dl><div><dt>Hours</dt><dd>11.01</dd></div><div><dt>Clips</dt><dd>2,676</dd></div></dl>
           </article>
           <article class="family-card interaction">
             <h3>Interaction</h3>
             <p>Object and human interactions require end-effector timing with whole-body stabilization.</p>
-            <dl><div><dt>Hours</dt><dd>43.01</dd></div><div><dt>Clips</dt><dd>11,068</dd></div></dl>
+            <dl><div><dt>Hours</dt><dd>47.78</dd></div><div><dt>Clips</dt><dd>10,940</dd></div></dl>
           </article>
           <article class="family-card ground">
             <h3>Ground</h3>
@@ -403,9 +403,10 @@
           <pre id="bibtex"><code>@misc{liu2026humantracker,
   title  = {HumanTracker: Towards Comprehensive and Human-Aligned
             Motion Tracking Benchmark},
-  author = {Liu, Dairu and Qi, Zekun and Zeng, Jiayu and Guan, Yu and
-            Lin, Chenghuai and Chen, Xuchuan and Yu, Xinqiang and
-            Zhang, Wenyao and Wang, He and Yi, Li},
+  author = {Liu, Dairu and Qi, Zekun and Zeng, Jiayu and Yu, Ruixi and
+            Guan, Yu and Zhang, Yintianrun and Chen, Xuchuan and
+            Liang, Sikai and Li, Zekai and Lin, Chenghuai and
+            Yu, Xinqiang and Zhang, Wenyao and Wang, He and Yi, Li},
   year   = {2026}
 }</code></pre>
         </div>
@@ -416,7 +417,7 @@
   <footer class="footer site-footer">
     <div class="container page-container">
       <div class="footer-grid">
-        <p><strong>HumanTracker</strong><br>Towards comprehensive and human-aligned motion tracking evaluation.</p>
+        <p><strong>HumanTracker</strong><br>Towards Comprehensive and Human-Aligned Motion Tracking Benchmark.</p>
         <p class="footer-credit">
           Website template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.<br>
           Site source is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
