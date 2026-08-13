@@ -128,9 +128,9 @@
           </div>
           <div class="column is-5">
             <div class="key-claim">
-              <span class="key-value">90.89%</span>
+              <span class="key-value">90.83%</span>
               <span class="key-label">alignment with human preferences on the test set</span>
-              <span class="key-note">6.18 points above the strongest conventional diagnostic.</span>
+              <span class="key-note">6.78 points above the strongest conventional diagnostic.</span>
             </div>
           </div>
         </div>
@@ -153,14 +153,14 @@
         <div class="columns is-variable is-7 is-vcentered method-block">
           <div class="column is-7">
             <figure class="method-figure">
-              <img src="./static/images/humanscore-architecture.png" width="2085" height="1203" loading="lazy" alt="HumanScore trajectory reward model from the paper with a temporal Transformer and masked max pooling">
+              <img src="./static/images/humanscore-architecture.png" width="2085" height="1203" loading="lazy" alt="HumanScore trajectory reward model from the paper with a temporal Transformer and masked mean pooling">
             </figure>
           </div>
           <div class="column is-5">
             <div class="content method-copy">
-              <p><strong>12K motion pairs.</strong> Human annotations cover 24K motions with strict preferences, similar judgments, and cannot-compare pairs.</p>
-              <p><strong>Five-second context.</strong> Each 250-frame window is encoded as an 850-dimensional trajectory token sequence with explicit padding masks.</p>
-              <p><strong>Readable output.</strong> Window logits pass through a sigmoid, failed remainder windows score zero, and the trajectory average is reported from 0 to 100.</p>
+              <p><strong>6,000 original pairs.</strong> Six expert annotators provide strict preferences, similar judgments, and cannot-compare judgments. Bilateral mirroring yields 12,000 preference records.</p>
+              <p><strong>Five-second context.</strong> Each 250-frame window is encoded as a 539-dimensional frame-token sequence with explicit padding masks.</p>
+              <p><strong>Readable output.</strong> Window rewards pass through a sigmoid and are averaged from 0 to 100, weighted by the number of actual frames.</p>
             </div>
           </div>
         </div>
@@ -168,18 +168,18 @@
         <div class="evidence-grid">
           <div class="alignment-card">
             <h3>Test set preference alignment</h3>
-            <div class="metric-row"><span>HumanScore</span><div class="bar"><i style="width: 90.89%"></i></div><strong>90.89</strong></div>
-            <div class="metric-row"><span>KPT position MAE</span><div class="bar"><i style="width: 84.71%"></i></div><strong>84.71</strong></div>
-            <div class="metric-row"><span>Joint velocity error</span><div class="bar"><i style="width: 84.61%"></i></div><strong>84.61</strong></div>
-            <div class="metric-row"><span>Foot contact accuracy</span><div class="bar"><i style="width: 82.93%"></i></div><strong>82.93</strong></div>
-            <div class="metric-row"><span>MPJPE</span><div class="bar"><i style="width: 81.68%"></i></div><strong>81.68</strong></div>
-            <p>Alignment rate (%) on 955 independent, unaugmented, strict-preference comparisons in the motion-disjoint test set.</p>
+            <div class="metric-row"><span>HumanScore</span><div class="bar"><i style="width: 90.83%"></i></div><strong>90.83</strong></div>
+            <div class="metric-row"><span>KPT position MAE</span><div class="bar"><i style="width: 84.05%"></i></div><strong>84.05</strong></div>
+            <div class="metric-row"><span>Joint velocity error</span><div class="bar"><i style="width: 84.04%"></i></div><strong>84.04</strong></div>
+            <div class="metric-row"><span>MPJPE</span><div class="bar"><i style="width: 80.49%"></i></div><strong>80.49</strong></div>
+            <div class="metric-row"><span>Foot contact accuracy</span><div class="bar"><i style="width: 78.82%"></i></div><strong>78.82</strong></div>
+            <p>Family-balanced alignment rate (%) on original, unmirrored strict-preference comparisons from the motion-disjoint test set.</p>
           </div>
           <div class="ablation-card">
             <h3>What the model uses</h3>
             <div class="ablation-images">
-              <figure><img src="./static/images/masking-ablation.png" width="1608" height="804" loading="lazy" alt="HumanScore feature masking analysis on the test set"><figcaption>Contact and reference features contribute complementary evidence.</figcaption></figure>
-              <figure><img src="./static/images/temporal-ablation.png" width="1608" height="801" loading="lazy" alt="HumanScore temporal context analysis on the test set"><figcaption>Longer temporal context captures sliding, drift, and recovery.</figcaption></figure>
+              <figure><img src="./static/images/masking-ablation.png" width="1598" height="788" loading="lazy" alt="HumanScore feature sensitivity analysis on the test set"><figcaption>Measured contact features matter most for Ground motions; future reference does not improve the baseline.</figcaption></figure>
+              <figure><img src="./static/images/temporal-ablation.png" width="1598" height="788" loading="lazy" alt="HumanScore temporal context analysis on the test set"><figcaption>Longer temporal context reveals sliding, jitter, drift, and recovery.</figcaption></figure>
             </div>
           </div>
         </div>
@@ -359,7 +359,7 @@
           </article>
           <article class="family-card interaction">
             <h3>Interaction</h3>
-            <p>Object and human interactions require end-effector timing with whole-body stabilization.</p>
+            <p>Object and environment interactions require hand, arm, and whole-body coordination.</p>
             <dl><div><dt>Hours</dt><dd>47.78</dd></div><div><dt>Clips</dt><dd>10,940</dd></div></dl>
           </article>
           <article class="family-card ground">
