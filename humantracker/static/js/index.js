@@ -34,9 +34,12 @@ const restartButton = document.querySelector(".restart-button");
 const timeDisplay = document.querySelector(".time-display");
 const loadStatus = document.querySelector(".load-status");
 const comparisonSection = document.querySelector(".comparison-section");
+const comparisonVideos = [...comparisonSection.querySelectorAll("video")];
+const progressControls = [...comparisonSection.querySelectorAll(".video-progress")];
 
 let activePanel = document.querySelector(".comparison-panel.is-active");
 let playing = false;
+let loading = false;
 let frameRequest = 0;
 let activeSession = null;
 const panelLoads = new WeakMap();
@@ -49,8 +52,12 @@ function activePage(panel = activePanel) {
   return motionPages(panel).find((page) => page.classList.contains("is-active")) || motionPages(panel)[0];
 }
 
-function panelVideos(panel = activePanel) {
-  return [...activePage(panel).querySelectorAll("video")];
+function panelVideo(panel = activePanel) {
+  return activePage(panel).querySelector("video");
+}
+
+function panelProgress(panel = activePanel) {
+  return activePage(panel).querySelector(".video-progress");
 }
 
 function formatTime(seconds) {
@@ -62,16 +69,19 @@ function formatTime(seconds) {
   return `${minutes}:${remainder}`;
 }
 
-function updateTime(current = 0, duration = 0) {
-  const currentText = formatTime(current);
-  const durationText = formatTime(duration);
-  timeDisplay.textContent = `${currentText} / ${durationText}`;
+function updateTime(current = 0, duration = 0, panel = activePanel) {
+  timeDisplay.textContent = `${formatTime(current)} / ${formatTime(duration)}`;
+  const progress = panelProgress(panel);
+  const ratio = Number.isFinite(duration) && duration > 0 ? Math.min(1, Math.max(0, current / duration)) : 0;
+  progress.value = String(Math.round(ratio * Number(progress.max)));
+  progress.style.setProperty("--progress", `${ratio * 100}%`);
+  progress.disabled = !(duration > 0);
 }
 
 function updatePlayButton() {
   playButton.setAttribute("aria-pressed", String(playing));
-  playIcon.textContent = playing ? "Ⅱ" : "▶";
-  playLabel.textContent = playing ? "Pause synchronized" : "Play synchronized";
+  playIcon.textContent = playing ? "Ⅱ" : loading ? "×" : "▶";
+  playLabel.textContent = playing ? "Pause" : loading ? "Cancel" : "Play";
 }
 
 function waitForMetadata(video) {
@@ -98,24 +108,22 @@ function waitForMetadata(video) {
 
 function loadPanel(panel = activePanel) {
   const page = activePage(panel);
+  const video = panelVideo(panel);
   if (page.dataset.loaded === "true") {
-    return Promise.resolve(panelVideos(panel));
+    return Promise.resolve(video);
   }
   if (panelLoads.has(page)) {
     return panelLoads.get(page);
   }
 
-  const videos = panelVideos(panel);
-  const metadata = Promise.all(videos.map(waitForMetadata));
-  videos.forEach((video) => {
-    video.preload = "auto";
-    video.src = video.dataset.src;
-    video.load();
-  });
+  const metadata = waitForMetadata(video);
+  video.preload = "auto";
+  video.src = video.dataset.src;
+  video.load();
 
   const load = metadata.then(() => {
     page.dataset.loaded = "true";
-    return videos;
+    return video;
   }).finally(() => {
     panelLoads.delete(page);
   });
@@ -123,36 +131,33 @@ function loadPanel(panel = activePanel) {
   return load;
 }
 
-function leader(videos = panelVideos()) {
-  return videos.reduce((longest, video) => video.duration > longest.duration ? video : longest);
-}
-
 function preloadPanel(panel = activePanel) {
-  void loadPanel(panel).catch((error) => {
-    console.warn("Unable to preload comparison media", error);
-  });
+  void loadPanel(panel)
+    .then((video) => {
+      if (panel === activePanel && video === panelVideo(panel)) {
+        updateTime(video.currentTime, video.duration, panel);
+      }
+    })
+    .catch((error) => {
+      console.warn("Unable to preload comparison media", error);
+    });
 }
 
-function setSharedTime(seconds, panel = activePanel) {
-  const videos = panelVideos(panel);
-  videos.forEach((video) => {
-    const lastFrame = Math.max(0, video.duration - 0.04);
-    video.currentTime = Math.min(seconds, lastFrame);
-  });
-  updateTime(seconds, leader(videos).duration);
+function setVideoTime(seconds, panel = activePanel) {
+  const video = panelVideo(panel);
+  video.currentTime = Math.min(seconds, Math.max(0, video.duration - 0.04));
+  updateTime(video.currentTime, video.duration);
 }
 
 function isCurrent(session) {
   return activeSession === session && activePanel === session.panel && activePage(session.panel) === session.page;
 }
 
-function isStale(session, videos = []) {
+function isStale(session) {
   if (isCurrent(session)) {
     return false;
   }
-  if (!activeSession || activeSession.panel !== session.panel) {
-    videos.forEach((video) => video.pause());
-  }
+  session.video.pause();
   return true;
 }
 
@@ -164,8 +169,9 @@ function cancelClock() {
 function pausePanel() {
   activeSession = null;
   playing = false;
+  loading = false;
   cancelClock();
-  panels.forEach((panel) => panelVideos(panel).forEach((video) => video.pause()));
+  comparisonVideos.forEach((video) => video.pause());
   updatePlayButton();
 }
 
@@ -174,47 +180,22 @@ function failPlayback(error, session) {
     return;
   }
   pausePanel();
-  loadStatus.textContent = `${error.message}. Check the media files and try again.`;
+  loadStatus.textContent = `${error.message}. Check the media file and try again.`;
 }
 
 function tick(session) {
   if (!playing || !isCurrent(session)) {
     return;
   }
-
-  const { panel } = session;
-  const videos = panelVideos(panel);
-  const clock = leader(videos);
-  const duration = clock.duration;
-  const current = clock.currentTime;
-
-  if (clock.ended || current >= duration - 0.04) {
-    setSharedTime(0, panel);
-    void playPanel();
+  if (session.video.error) {
+    failPlayback(new Error("Unable to continue playing the comparison video"), session);
     return;
   }
-
-  videos.forEach((video) => {
-    if (video === clock) {
-      return;
-    }
-    const lastFrame = Math.max(0, video.duration - 0.04);
-    if (current >= lastFrame) {
-      video.currentTime = lastFrame;
-      video.pause();
-      return;
-    }
-    if (Math.abs(video.currentTime - current) > 0.12) {
-      video.currentTime = current;
-    }
-    if (video.paused) {
-      video.play()
-        .then(() => isStale(session, [video]))
-        .catch((error) => failPlayback(error, session));
-    }
-  });
-
-  updateTime(current, duration);
+  if (session.video.paused) {
+    pausePanel();
+    return;
+  }
+  updateTime(session.video.currentTime, session.video.duration);
   frameRequest = window.requestAnimationFrame(() => tick(session));
 }
 
@@ -223,32 +204,32 @@ function playPanel() {
     return activeSession.promise;
   }
 
-  const session = { panel: activePanel, page: activePage(), promise: null };
+  const session = { panel: activePanel, page: activePage(), video: panelVideo(), promise: null };
   activeSession = session;
+  loading = true;
+  updatePlayButton();
   if (session.page.dataset.loaded !== "true") {
     loadStatus.textContent = "Loading…";
   }
 
-  session.promise = loadPanel(session.panel).then((videos) => {
-    if (isStale(session, videos)) {
+  session.promise = loadPanel(session.panel).then((video) => {
+    session.video = video;
+    if (isStale(session)) {
       return;
     }
-    const clock = leader(videos);
-    if (!Number.isFinite(clock.duration) || clock.duration <= 0.04) {
-      throw new Error("Comparison videos have no playable duration");
+    if (!Number.isFinite(video.duration) || video.duration <= 0.04) {
+      throw new Error("Comparison video has no playable duration");
     }
-    updateTime(clock.currentTime, clock.duration);
+    if (video.currentTime >= video.duration - 0.04) {
+      video.currentTime = 0;
+    }
+    updateTime(video.currentTime, video.duration);
     loadStatus.textContent = "";
-    if (clock.currentTime >= clock.duration - 0.04) {
-      setSharedTime(0, session.panel);
-    }
-
-    const current = clock.currentTime;
-    const playable = videos.filter((video) => current < video.duration - 0.04);
-    return Promise.all(playable.map((video) => video.play())).then(() => {
-      if (isStale(session, videos)) {
+    return video.play().then(() => {
+      if (isStale(session)) {
         return;
       }
+      loading = false;
       playing = true;
       updatePlayButton();
       cancelClock();
@@ -262,6 +243,28 @@ function playPanel() {
     }
   });
   return session.promise;
+}
+
+function showActiveTime() {
+  const page = activePage();
+  if (page.dataset.loaded === "true") {
+    const video = panelVideo();
+    updateTime(video.currentTime, video.duration);
+  } else {
+    updateTime(0, 0);
+  }
+  loadStatus.textContent = "";
+}
+
+function updatePageButtons() {
+  const pages = motionPages();
+  const activeIndex = pages.findIndex((page) => page.classList.contains("is-active"));
+  pageButtons.forEach((button, index) => {
+    const selected = index === activeIndex;
+    button.hidden = index >= pages.length;
+    button.classList.toggle("is-active", selected);
+    button.setAttribute("aria-current", selected ? "page" : "false");
+  });
 }
 
 function activatePanel(name) {
@@ -280,29 +283,9 @@ function activatePanel(name) {
       activePanel = panel;
     }
   });
-
   updatePageButtons();
-  if (activePage().dataset.loaded === "true") {
-    const videos = panelVideos();
-    const duration = leader(videos).duration;
-    updateTime(leader(videos).currentTime, duration);
-    loadStatus.textContent = "";
-  } else {
-    updateTime(0, 0);
-    loadStatus.textContent = "";
-  }
+  showActiveTime();
   preloadPanel();
-}
-
-function updatePageButtons() {
-  const pages = motionPages();
-  const activeIndex = pages.findIndex((page) => page.classList.contains("is-active"));
-  pageButtons.forEach((button, index) => {
-    const selected = index === activeIndex;
-    button.hidden = index >= pages.length;
-    button.classList.toggle("is-active", selected);
-    button.setAttribute("aria-current", selected ? "page" : "false");
-  });
 }
 
 function activatePage(index) {
@@ -311,20 +294,14 @@ function activatePage(index) {
   const next = pages[Math.max(0, Math.min(index, pages.length - 1))];
   pages.forEach((page) => page.classList.toggle("is-active", page === next));
   updatePageButtons();
-  if (next.dataset.loaded === "true") {
-    const videos = panelVideos();
-    updateTime(leader(videos).currentTime, leader(videos).duration);
-  } else {
-    updateTime(0, 0);
-  }
-  loadStatus.textContent = "";
+  showActiveTime();
   preloadPanel();
 }
 
 tabs.forEach((tab, index) => {
   tab.addEventListener("click", () => activatePanel(tab.dataset.motion));
   tab.addEventListener("keydown", (event) => {
-    if (!(["ArrowLeft", "ArrowRight"].includes(event.key))) {
+    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) {
       return;
     }
     event.preventDefault();
@@ -336,7 +313,7 @@ tabs.forEach((tab, index) => {
 });
 
 playButton.addEventListener("click", () => {
-  if (playing) {
+  if (playing || loading) {
     pausePanel();
     return;
   }
@@ -350,7 +327,7 @@ restartButton.addEventListener("click", () => {
   }
   const wasPlaying = playing;
   pausePanel();
-  setSharedTime(0);
+  setVideoTime(0);
   if (wasPlaying) {
     void playPanel();
   }
@@ -360,14 +337,27 @@ pageButtons.forEach((button, index) => {
   button.addEventListener("click", () => activatePage(index));
 });
 
+progressControls.forEach((progress) => {
+  progress.addEventListener("input", () => {
+    const page = progress.closest(".motion-page");
+    if (page !== activePage() || page.dataset.loaded !== "true") {
+      return;
+    }
+    const video = page.querySelector("video");
+    const target = Number(progress.value) / Number(progress.max) * video.duration;
+    video.currentTime = Math.min(target, Math.max(0, video.duration - 0.04));
+    updateTime(video.currentTime, video.duration);
+  });
+});
+
 document.addEventListener("visibilitychange", () => {
-  if (document.hidden && playing) {
+  if (document.hidden && (playing || loading)) {
     pausePanel();
   }
 });
 
 const sectionObserver = new IntersectionObserver(([entry]) => {
-  if (!entry.isIntersecting && playing) {
+  if (!entry.isIntersecting && (playing || loading)) {
     pausePanel();
   }
 }, { threshold: 0.08 });

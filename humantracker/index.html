@@ -190,7 +190,6 @@
       <div class="container page-container">
         <div class="section-heading centered-heading light-heading">
           <h2 class="title is-2">See what HumanScore sees.</h2>
-          <p class="section-intro">Each grid synchronizes four zero-shot rollouts of the same reference motion. A failed rollout holds on its final frame while the remaining trackers continue.</p>
         </div>
 
         <div class="motion-tabs" role="tablist" aria-label="Select motion family">
@@ -203,29 +202,53 @@
         <div id="panel-daily" class="comparison-panel is-active" role="tabpanel" aria-labelledby="tab-daily" data-panel="daily">
           <div class="motion-page is-active" data-motion-id="00020_kneel_step">
             <div class="motion-meta"><div><span class="motion-family">Daily</span><h3>Kneeling and high-knee steps</h3></div><span class="motion-id">37.32 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00020_kneel_step/gmt.webp" data-src="./static/videos/00020_kneel_step/gmt.mp4" aria-label="GMT rollout for Daily motion 00020_kneel_step"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>5.70</strong></span><span>MPJPE (rad) <strong>0.158</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00020_kneel_step/hgpt.webp" data-src="./static/videos/00020_kneel_step/hgpt.mp4" aria-label="Humanoid-GPT rollout for Daily motion 00020_kneel_step"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>86.75</strong></span><span>MPJPE (rad) <strong>0.044</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00020_kneel_step/sonic.webp" data-src="./static/videos/00020_kneel_step/sonic.mp4" aria-label="SONIC rollout for Daily motion 00020_kneel_step"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>73.00</strong></span><span>MPJPE (rad) <strong>0.103</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00020_kneel_step/twist2.webp" data-src="./static/videos/00020_kneel_step/twist2.mp4" aria-label="TWIST2 rollout for Daily motion 00020_kneel_step"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>24.37</strong></span><span>MPJPE (rad) <strong>0.081</strong></span></p></div></article>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>5.70</strong></span><span>MPJPE (rad) <strong>0.158</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>86.75</strong></span><span>MPJPE (rad) <strong>0.044</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/00020_kneel_step/comparison.webp" data-src="./static/videos/00020_kneel_step/comparison.mp4" aria-label="Four tracker rollouts for Daily motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>73.00</strong></span><span>MPJPE (rad) <strong>0.103</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>24.37</strong></span><span>MPJPE (rad) <strong>0.081</strong></span></p></article>
+              </div>
             </div>
           </div>
           <div class="motion-page" data-motion-id="00140_walk_turn">
             <div class="motion-meta"><div><span class="motion-family">Daily</span><h3>Walking, turns, and high-knee steps</h3></div><span class="motion-id">35.72 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00140_walk_turn/gmt.webp" data-src="./static/videos/00140_walk_turn/gmt.mp4" aria-label="GMT rollout for Daily motion 00140_walk_turn"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>0.95</strong></span><span>MPJPE (rad) <strong>0.155</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00140_walk_turn/hgpt.webp" data-src="./static/videos/00140_walk_turn/hgpt.mp4" aria-label="Humanoid-GPT rollout for Daily motion 00140_walk_turn"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>82.29</strong></span><span>MPJPE (rad) <strong>0.043</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00140_walk_turn/sonic.webp" data-src="./static/videos/00140_walk_turn/sonic.mp4" aria-label="SONIC rollout for Daily motion 00140_walk_turn"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>79.13</strong></span><span>MPJPE (rad) <strong>0.075</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00140_walk_turn/twist2.webp" data-src="./static/videos/00140_walk_turn/twist2.mp4" aria-label="TWIST2 rollout for Daily motion 00140_walk_turn"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>23.11</strong></span><span>MPJPE (rad) <strong>0.076</strong></span></p></div></article>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>0.95</strong></span><span>MPJPE (rad) <strong>0.155</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>82.29</strong></span><span>MPJPE (rad) <strong>0.043</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/00140_walk_turn/comparison.webp" data-src="./static/videos/00140_walk_turn/comparison.mp4" aria-label="Four tracker rollouts for Daily motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>79.13</strong></span><span>MPJPE (rad) <strong>0.075</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>23.11</strong></span><span>MPJPE (rad) <strong>0.076</strong></span></p></article>
+              </div>
             </div>
           </div>
           <div class="motion-page" data-motion-id="00420_walk">
-            <div class="motion-meta"><div><span class="motion-family">Daily</span><h3>Straight walking</h3></div><span class="motion-id">36.38 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00420_walk/gmt.webp" data-src="./static/videos/00420_walk/gmt.mp4" aria-label="GMT rollout for Daily motion 00420_walk"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>1.62</strong></span><span>MPJPE (rad) <strong>0.166</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00420_walk/hgpt.webp" data-src="./static/videos/00420_walk/hgpt.mp4" aria-label="Humanoid-GPT rollout for Daily motion 00420_walk"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>79.72</strong></span><span>MPJPE (rad) <strong>0.038</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00420_walk/sonic.webp" data-src="./static/videos/00420_walk/sonic.mp4" aria-label="SONIC rollout for Daily motion 00420_walk"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>79.28</strong></span><span>MPJPE (rad) <strong>0.060</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/00420_walk/twist2.webp" data-src="./static/videos/00420_walk/twist2.mp4" aria-label="TWIST2 rollout for Daily motion 00420_walk"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>5.83</strong></span><span>MPJPE (rad) <strong>0.066</strong></span></p></div></article>
+            <div class="motion-meta"><div><span class="motion-family">Daily</span><h3>Straight walking</h3></div><span class="motion-id">36.40 s</span></div>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>1.62</strong></span><span>MPJPE (rad) <strong>0.166</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>79.72</strong></span><span>MPJPE (rad) <strong>0.038</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/00420_walk/comparison.webp" data-src="./static/videos/00420_walk/comparison.mp4" aria-label="Four tracker rollouts for Daily motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>79.28</strong></span><span>MPJPE (rad) <strong>0.060</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>5.83</strong></span><span>MPJPE (rad) <strong>0.066</strong></span></p></article>
+              </div>
             </div>
           </div>
         </div>
@@ -233,59 +256,107 @@
         <div id="panel-dynamic" class="comparison-panel" role="tabpanel" aria-labelledby="tab-dynamic" data-panel="dynamic" hidden>
           <div class="motion-page is-active" data-motion-id="01340_roundhouse">
             <div class="motion-meta"><div><span class="motion-family">Highly Dynamic</span><h3>Single-leg roundhouse kick</h3></div><span class="motion-id">8.36 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01340_roundhouse/gmt.webp" data-src="./static/videos/01340_roundhouse/gmt.mp4" aria-label="GMT rollout for Highly Dynamic motion 01340_roundhouse"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>1.96</strong></span><span>MPJPE (rad) <strong>0.107</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01340_roundhouse/hgpt.webp" data-src="./static/videos/01340_roundhouse/hgpt.mp4" aria-label="Humanoid-GPT rollout for Highly Dynamic motion 01340_roundhouse"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>33.04</strong></span><span>MPJPE (rad) <strong>0.041</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01340_roundhouse/sonic.webp" data-src="./static/videos/01340_roundhouse/sonic.mp4" aria-label="SONIC rollout for Highly Dynamic motion 01340_roundhouse"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>37.15</strong></span><span>MPJPE (rad) <strong>0.105</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01340_roundhouse/twist2.webp" data-src="./static/videos/01340_roundhouse/twist2.mp4" aria-label="TWIST2 rollout for Highly Dynamic motion 01340_roundhouse"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>20.18</strong></span><span>MPJPE (rad) <strong>0.076</strong></span></p></div></article>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>1.96</strong></span><span>MPJPE (rad) <strong>0.107</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>33.04</strong></span><span>MPJPE (rad) <strong>0.041</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/01340_roundhouse/comparison.webp" data-src="./static/videos/01340_roundhouse/comparison.mp4" aria-label="Four tracker rollouts for Highly Dynamic motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>37.15</strong></span><span>MPJPE (rad) <strong>0.105</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>20.18</strong></span><span>MPJPE (rad) <strong>0.076</strong></span></p></article>
+              </div>
             </div>
           </div>
           <div class="motion-page" data-motion-id="01180_Default_073">
             <div class="motion-meta"><div><span class="motion-family">Highly Dynamic</span><h3>Expressive dance</h3></div><span class="motion-id">96.52 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01180_Default_073/gmt.webp" data-src="./static/videos/01180_Default_073/gmt.mp4" aria-label="GMT rollout for Highly Dynamic motion 01180_Default_073"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>3.07</strong></span><span>MPJPE (rad) <strong>0.447</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01180_Default_073/hgpt.webp" data-src="./static/videos/01180_Default_073/hgpt.mp4" aria-label="Humanoid-GPT rollout for Highly Dynamic motion 01180_Default_073"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>63.32</strong></span><span>MPJPE (rad) <strong>0.058</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01180_Default_073/sonic.webp" data-src="./static/videos/01180_Default_073/sonic.mp4" aria-label="SONIC rollout for Highly Dynamic motion 01180_Default_073"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>32.62</strong></span><span>MPJPE (rad) <strong>0.206</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01180_Default_073/twist2.webp" data-src="./static/videos/01180_Default_073/twist2.mp4" aria-label="TWIST2 rollout for Highly Dynamic motion 01180_Default_073"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>9.39</strong></span><span>MPJPE (rad) <strong>0.324</strong></span></p></div></article>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>3.07</strong></span><span>MPJPE (rad) <strong>0.447</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>63.32</strong></span><span>MPJPE (rad) <strong>0.058</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/01180_Default_073/comparison.webp" data-src="./static/videos/01180_Default_073/comparison.mp4" aria-label="Four tracker rollouts for Highly Dynamic motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>32.62</strong></span><span>MPJPE (rad) <strong>0.206</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>9.39</strong></span><span>MPJPE (rad) <strong>0.324</strong></span></p></article>
+              </div>
             </div>
           </div>
           <div class="motion-page" data-motion-id="01240_wushu_take091">
             <div class="motion-meta"><div><span class="motion-family">Highly Dynamic</span><h3>Wushu high side kick</h3></div><span class="motion-id">10.20 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01240_wushu_take091/gmt.webp" data-src="./static/videos/01240_wushu_take091/gmt.mp4" aria-label="GMT rollout for Highly Dynamic motion 01240_wushu_take091"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>0.41</strong></span><span>MPJPE (rad) <strong>0.246</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01240_wushu_take091/hgpt.webp" data-src="./static/videos/01240_wushu_take091/hgpt.mp4" aria-label="Humanoid-GPT rollout for Highly Dynamic motion 01240_wushu_take091"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>39.46</strong></span><span>MPJPE (rad) <strong>0.042</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01240_wushu_take091/sonic.webp" data-src="./static/videos/01240_wushu_take091/sonic.mp4" aria-label="SONIC rollout for Highly Dynamic motion 01240_wushu_take091"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>5.66</strong></span><span>MPJPE (rad) <strong>0.151</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01240_wushu_take091/twist2.webp" data-src="./static/videos/01240_wushu_take091/twist2.mp4" aria-label="TWIST2 rollout for Highly Dynamic motion 01240_wushu_take091"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>0.65</strong></span><span>MPJPE (rad) <strong>0.195</strong></span></p></div></article>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>0.41</strong></span><span>MPJPE (rad) <strong>0.246</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>39.46</strong></span><span>MPJPE (rad) <strong>0.042</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/01240_wushu_take091/comparison.webp" data-src="./static/videos/01240_wushu_take091/comparison.mp4" aria-label="Four tracker rollouts for Highly Dynamic motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>5.66</strong></span><span>MPJPE (rad) <strong>0.151</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>0.65</strong></span><span>MPJPE (rad) <strong>0.195</strong></span></p></article>
+              </div>
             </div>
           </div>
         </div>
 
         <div id="panel-interaction" class="comparison-panel" role="tabpanel" aria-labelledby="tab-interaction" data-panel="interaction" hidden>
           <div class="motion-page is-active" data-motion-id="01560_muxiao">
-            <div class="motion-meta"><div><span class="motion-family">Interaction</span><h3>Two-hand gesture sequence</h3></div><span class="motion-id">11.06 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01560_muxiao/gmt.webp" data-src="./static/videos/01560_muxiao/gmt.mp4" aria-label="GMT rollout for Interaction motion 01560_muxiao"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>3.45</strong></span><span>MPJPE (rad) <strong>0.121</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01560_muxiao/hgpt.webp" data-src="./static/videos/01560_muxiao/hgpt.mp4" aria-label="Humanoid-GPT rollout for Interaction motion 01560_muxiao"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>84.48</strong></span><span>MPJPE (rad) <strong>0.039</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01560_muxiao/sonic.webp" data-src="./static/videos/01560_muxiao/sonic.mp4" aria-label="SONIC rollout for Interaction motion 01560_muxiao"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>63.06</strong></span><span>MPJPE (rad) <strong>0.071</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01560_muxiao/twist2.webp" data-src="./static/videos/01560_muxiao/twist2.mp4" aria-label="TWIST2 rollout for Interaction motion 01560_muxiao"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>31.60</strong></span><span>MPJPE (rad) <strong>0.069</strong></span></p></div></article>
+            <div class="motion-meta"><div><span class="motion-family">Interaction</span><h3>Two-hand gesture sequence</h3></div><span class="motion-id">11.08 s</span></div>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>3.45</strong></span><span>MPJPE (rad) <strong>0.121</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>84.48</strong></span><span>MPJPE (rad) <strong>0.039</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/01560_muxiao/comparison.webp" data-src="./static/videos/01560_muxiao/comparison.mp4" aria-label="Four tracker rollouts for Interaction motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>63.06</strong></span><span>MPJPE (rad) <strong>0.071</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>31.60</strong></span><span>MPJPE (rad) <strong>0.069</strong></span></p></article>
+              </div>
             </div>
           </div>
           <div class="motion-page" data-motion-id="02300_muxiao">
-            <div class="motion-meta"><div><span class="motion-family">Interaction</span><h3>Forward hand gestures</h3></div><span class="motion-id">5.62 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02300_muxiao/gmt.webp" data-src="./static/videos/02300_muxiao/gmt.mp4" aria-label="GMT rollout for Interaction motion 02300_muxiao"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>14.66</strong></span><span>MPJPE (rad) <strong>0.107</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02300_muxiao/hgpt.webp" data-src="./static/videos/02300_muxiao/hgpt.mp4" aria-label="Humanoid-GPT rollout for Interaction motion 02300_muxiao"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>76.04</strong></span><span>MPJPE (rad) <strong>0.044</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02300_muxiao/sonic.webp" data-src="./static/videos/02300_muxiao/sonic.mp4" aria-label="SONIC rollout for Interaction motion 02300_muxiao"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>53.76</strong></span><span>MPJPE (rad) <strong>0.087</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02300_muxiao/twist2.webp" data-src="./static/videos/02300_muxiao/twist2.mp4" aria-label="TWIST2 rollout for Interaction motion 02300_muxiao"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>71.83</strong></span><span>MPJPE (rad) <strong>0.064</strong></span></p></div></article>
+            <div class="motion-meta"><div><span class="motion-family">Interaction</span><h3>Forward hand gestures</h3></div><span class="motion-id">5.64 s</span></div>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>14.66</strong></span><span>MPJPE (rad) <strong>0.107</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>76.04</strong></span><span>MPJPE (rad) <strong>0.044</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/02300_muxiao/comparison.webp" data-src="./static/videos/02300_muxiao/comparison.mp4" aria-label="Four tracker rollouts for Interaction motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>53.76</strong></span><span>MPJPE (rad) <strong>0.087</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>71.83</strong></span><span>MPJPE (rad) <strong>0.064</strong></span></p></article>
+              </div>
             </div>
           </div>
           <div class="motion-page" data-motion-id="02400_wangqihao">
             <div class="motion-meta"><div><span class="motion-family">Interaction</span><h3>Reaching hand gesture</h3></div><span class="motion-id">10.12 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02400_wangqihao/gmt.webp" data-src="./static/videos/02400_wangqihao/gmt.mp4" aria-label="GMT rollout for Interaction motion 02400_wangqihao"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>2.89</strong></span><span>MPJPE (rad) <strong>0.111</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02400_wangqihao/hgpt.webp" data-src="./static/videos/02400_wangqihao/hgpt.mp4" aria-label="Humanoid-GPT rollout for Interaction motion 02400_wangqihao"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>79.92</strong></span><span>MPJPE (rad) <strong>0.045</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02400_wangqihao/sonic.webp" data-src="./static/videos/02400_wangqihao/sonic.mp4" aria-label="SONIC rollout for Interaction motion 02400_wangqihao"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>70.98</strong></span><span>MPJPE (rad) <strong>0.061</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/02400_wangqihao/twist2.webp" data-src="./static/videos/02400_wangqihao/twist2.mp4" aria-label="TWIST2 rollout for Interaction motion 02400_wangqihao"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>18.59</strong></span><span>MPJPE (rad) <strong>0.062</strong></span></p></div></article>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>2.89</strong></span><span>MPJPE (rad) <strong>0.111</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>79.92</strong></span><span>MPJPE (rad) <strong>0.045</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/02400_wangqihao/comparison.webp" data-src="./static/videos/02400_wangqihao/comparison.mp4" aria-label="Four tracker rollouts for Interaction motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>70.98</strong></span><span>MPJPE (rad) <strong>0.061</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>18.59</strong></span><span>MPJPE (rad) <strong>0.062</strong></span></p></article>
+              </div>
             </div>
           </div>
         </div>
@@ -293,36 +364,60 @@
         <div id="panel-ground" class="comparison-panel" role="tabpanel" aria-labelledby="tab-ground" data-panel="ground" hidden>
           <div class="motion-page is-active" data-motion-id="01100_stand_sit">
             <div class="motion-meta"><div><span class="motion-family">Ground</span><h3>Stand to sit</h3></div><span class="motion-id">8.52 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01100_stand_sit/gmt.webp" data-src="./static/videos/01100_stand_sit/gmt.mp4" aria-label="GMT rollout for Ground motion 01100_stand_sit"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>1.28</strong></span><span>MPJPE (rad) <strong>0.345</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01100_stand_sit/hgpt.webp" data-src="./static/videos/01100_stand_sit/hgpt.mp4" aria-label="Humanoid-GPT rollout for Ground motion 01100_stand_sit"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>13.23</strong></span><span>MPJPE (rad) <strong>0.103</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01100_stand_sit/sonic.webp" data-src="./static/videos/01100_stand_sit/sonic.mp4" aria-label="SONIC rollout for Ground motion 01100_stand_sit"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>33.60</strong></span><span>MPJPE (rad) <strong>0.242</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01100_stand_sit/twist2.webp" data-src="./static/videos/01100_stand_sit/twist2.mp4" aria-label="TWIST2 rollout for Ground motion 01100_stand_sit"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>0.12</strong></span><span>MPJPE (rad) <strong>0.224</strong></span></p></div></article>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>1.28</strong></span><span>MPJPE (rad) <strong>0.345</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>13.23</strong></span><span>MPJPE (rad) <strong>0.103</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/01100_stand_sit/comparison.webp" data-src="./static/videos/01100_stand_sit/comparison.mp4" aria-label="Four tracker rollouts for Ground motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>33.60</strong></span><span>MPJPE (rad) <strong>0.242</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>0.12</strong></span><span>MPJPE (rad) <strong>0.224</strong></span></p></article>
+              </div>
             </div>
           </div>
           <div class="motion-page" data-motion-id="01020_roll_over">
             <div class="motion-meta"><div><span class="motion-family">Ground</span><h3>Roll over and rise</h3></div><span class="motion-id">9.76 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01020_roll_over/gmt.webp" data-src="./static/videos/01020_roll_over/gmt.mp4" aria-label="GMT rollout for Ground motion 01020_roll_over"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>0.00</strong></span><span>MPJPE (rad) <strong>0.552</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01020_roll_over/hgpt.webp" data-src="./static/videos/01020_roll_over/hgpt.mp4" aria-label="Humanoid-GPT rollout for Ground motion 01020_roll_over"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>45.71</strong></span><span>MPJPE (rad) <strong>0.234</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01020_roll_over/sonic.webp" data-src="./static/videos/01020_roll_over/sonic.mp4" aria-label="SONIC rollout for Ground motion 01020_roll_over"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>39.77</strong></span><span>MPJPE (rad) <strong>0.197</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01020_roll_over/twist2.webp" data-src="./static/videos/01020_roll_over/twist2.mp4" aria-label="TWIST2 rollout for Ground motion 01020_roll_over"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>0.00</strong></span><span>MPJPE (rad) <strong>0.342</strong></span></p></div></article>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>0.00</strong></span><span>MPJPE (rad) <strong>0.552</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>45.71</strong></span><span>MPJPE (rad) <strong>0.234</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/01020_roll_over/comparison.webp" data-src="./static/videos/01020_roll_over/comparison.mp4" aria-label="Four tracker rollouts for Ground motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>39.77</strong></span><span>MPJPE (rad) <strong>0.197</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>0.00</strong></span><span>MPJPE (rad) <strong>0.342</strong></span></p></article>
+              </div>
             </div>
           </div>
           <div class="motion-page" data-motion-id="01040_burpee">
-            <div class="motion-meta"><div><span class="motion-family">Ground</span><h3>Burpee</h3></div><span class="motion-id">10.82 s</span></div>
-            <div class="tracker-grid">
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01040_burpee/gmt.webp" data-src="./static/videos/01040_burpee/gmt.mp4" aria-label="GMT rollout for Ground motion 01040_burpee"></video><span class="rank">#4</span></div><div class="tracker-meta"><h4>GMT</h4><p><span>HumanScore <strong>19.80</strong></span><span>MPJPE (rad) <strong>0.302</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01040_burpee/hgpt.webp" data-src="./static/videos/01040_burpee/hgpt.mp4" aria-label="Humanoid-GPT rollout for Ground motion 01040_burpee"></video><span class="rank">#2</span></div><div class="tracker-meta"><h4>Humanoid-GPT</h4><p><span>HumanScore <strong>24.08</strong></span><span>MPJPE (rad) <strong>0.201</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01040_burpee/sonic.webp" data-src="./static/videos/01040_burpee/sonic.mp4" aria-label="SONIC rollout for Ground motion 01040_burpee"></video><span class="rank">#3</span></div><div class="tracker-meta"><h4>SONIC</h4><p><span>HumanScore <strong>22.34</strong></span><span>MPJPE (rad) <strong>0.118</strong></span></p></div></article>
-              <article class="tracker-card"><div class="video-shell"><video muted playsinline preload="none" poster="./static/videos/01040_burpee/twist2.webp" data-src="./static/videos/01040_burpee/twist2.mp4" aria-label="TWIST2 rollout for Ground motion 01040_burpee"></video><span class="rank best">#1</span></div><div class="tracker-meta"><h4>TWIST2</h4><p><span>HumanScore <strong>35.10</strong></span><span>MPJPE (rad) <strong>0.219</strong></span></p></div></article>
+            <div class="motion-meta"><div><span class="motion-family">Ground</span><h3>Burpee</h3></div><span class="motion-id">10.84 s</span></div>
+            <div class="comparison-composite">
+              <div class="tracker-row tracker-row-top">
+              <article class="tracker-summary" data-tracker="gmt"><div class="tracker-heading"><h4>GMT</h4><span class="metric-rank">#4</span></div><p><span>HumanScore <strong>19.80</strong></span><span>MPJPE (rad) <strong>0.302</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="hgpt"><div class="tracker-heading"><h4>Humanoid-GPT</h4><span class="metric-rank">#2</span></div><p><span>HumanScore <strong>24.08</strong></span><span>MPJPE (rad) <strong>0.201</strong></span></p></article>
+              </div>
+              <div class="comparison-video-shell">
+                <video muted playsinline loop preload="none" poster="./static/videos/01040_burpee/comparison.webp" data-src="./static/videos/01040_burpee/comparison.mp4" aria-label="Four tracker rollouts for Ground motion"></video>
+              </div>
+              <div class="comparison-progress"><input class="video-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="Video progress" disabled></div>
+              <div class="tracker-row tracker-row-bottom">
+              <article class="tracker-summary" data-tracker="sonic"><div class="tracker-heading"><h4>SONIC</h4><span class="metric-rank">#3</span></div><p><span>HumanScore <strong>22.34</strong></span><span>MPJPE (rad) <strong>0.118</strong></span></p></article>
+              <article class="tracker-summary" data-tracker="twist2"><div class="tracker-heading"><h4>TWIST2</h4><span class="metric-rank best">#1</span></div><p><span>HumanScore <strong>35.10</strong></span><span>MPJPE (rad) <strong>0.219</strong></span></p></article>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="comparison-toolbar">
-          <div class="sync-controls" aria-label="Synchronized video controls">
-            <button class="control-button play-toggle" type="button"><span class="icon" aria-hidden="true">▶</span><span>Play synchronized</span></button>
+          <div class="video-controls" aria-label="Video controls">
+            <button class="control-button play-toggle" type="button"><span class="icon" aria-hidden="true">▶</span><span>Play</span></button>
             <button class="control-button restart-button" type="button"><span class="icon" aria-hidden="true">↻</span><span>Restart</span></button>
           </div>
           <nav class="motion-pagination" aria-label="Select motion">
@@ -330,14 +425,13 @@
             <button class="motion-page-button" type="button" aria-label="Motion 2">2</button>
             <button class="motion-page-button" type="button" aria-label="Motion 3">3</button>
           </nav>
-          <div class="sync-status">
+          <div class="video-status">
             <output class="time-display">0:00 / 0:00</output>
             <span class="load-status" aria-live="polite"></span>
           </div>
         </div>
       </div>
     </section>
-
     <section id="benchmark" class="section section-soft">
       <div class="container page-container">
         <div class="section-heading centered-heading">

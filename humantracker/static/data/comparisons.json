@@ -3,7 +3,14 @@
     "pack": "homepage_demo_zeroshot_20260813",
     "setting": "zero_shot",
     "human_score_field": "human_score",
-    "mpjpe_field": "mpjpe_rad"
+    "mpjpe_field": "mpjpe_rad",
+    "tracker_order": [
+      "gmt",
+      "hgpt",
+      "sonic",
+      "twist2"
+    ],
+    "composite_layout": "2x2"
   },
   "motions": {
     "00020_kneel_step": {
@@ -11,10 +18,10 @@
       "title": "Kneeling and high-knee steps",
       "source_folder": "00020_Take 2025-12-09 10.30.05 AM_changkaihan_120Hz_29dof",
       "media": {
-        "frames": 1866,
-        "fps": 50,
+        "frames": 933,
         "duration_seconds": 37.32,
-        "resolution": "1280x720"
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -40,10 +47,10 @@
       "title": "Walking, turns, and high-knee steps",
       "source_folder": "00140_Take 2025-12-15 09.17.41 AM_zhangyuefa_120Hz_29dof",
       "media": {
-        "frames": 1786,
-        "fps": 50,
+        "frames": 893,
         "duration_seconds": 35.72,
-        "resolution": "1280x720"
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -69,10 +76,10 @@
       "title": "Straight walking",
       "source_folder": "00420_Take 2025-11-26 03.19.34 PM_peizengyun_120Hz_29dof",
       "media": {
-        "frames": 1819,
-        "fps": 50,
-        "duration_seconds": 36.38,
-        "resolution": "1280x720"
+        "frames": 910,
+        "duration_seconds": 36.4,
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -98,10 +105,10 @@
       "title": "Single-leg roundhouse kick",
       "source_folder": "01340_SingleLegRoundhouseKick_20260302_pns_wushu_take007_chr02_90Hz_29dof",
       "media": {
-        "frames": 418,
-        "fps": 50,
+        "frames": 209,
         "duration_seconds": 8.36,
-        "resolution": "1280x720"
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -127,10 +134,10 @@
       "title": "Expressive dance",
       "source_folder": "01180_Default_073",
       "media": {
-        "frames": 4826,
-        "fps": 50,
+        "frames": 2413,
         "duration_seconds": 96.52,
-        "resolution": "1280x720"
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -156,10 +163,10 @@
       "title": "Wushu high side kick",
       "source_folder": "01240_PnlinkWushu_20260318_pnlink_wushu_bvh_20260318_pm_huyufeng_take091_huyufeng_90Hz_29dof",
       "media": {
-        "frames": 510,
-        "fps": 50,
+        "frames": 255,
         "duration_seconds": 10.2,
-        "resolution": "1280x720"
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -185,10 +192,10 @@
       "title": "Two-hand gesture sequence",
       "source_folder": "01560_Take 2025-12-15 10.25.10 AM_muxiao_120Hz_29dof",
       "media": {
-        "frames": 553,
-        "fps": 50,
-        "duration_seconds": 11.06,
-        "resolution": "1280x720"
+        "frames": 277,
+        "duration_seconds": 11.08,
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -214,10 +221,10 @@
       "title": "Forward hand gestures",
       "source_folder": "02300_Take 2025-12-17 10.27.52 AM_muxiao_120Hz_29dof",
       "media": {
-        "frames": 281,
-        "fps": 50,
-        "duration_seconds": 5.62,
-        "resolution": "1280x720"
+        "frames": 141,
+        "duration_seconds": 5.64,
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -243,10 +250,10 @@
       "title": "Reaching hand gesture",
       "source_folder": "02400_Take 2025-12-19 08.46.11 AM_wangqihao_120Hz_29dof",
       "media": {
-        "frames": 506,
-        "fps": 50,
+        "frames": 253,
         "duration_seconds": 10.12,
-        "resolution": "1280x720"
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -272,10 +279,10 @@
       "title": "Stand to sit",
       "source_folder": "01100_stand-sit_take002_chr01_90Hz_29dof",
       "media": {
-        "frames": 426,
-        "fps": 50,
+        "frames": 213,
         "duration_seconds": 8.52,
-        "resolution": "1280x720"
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -301,10 +308,10 @@
       "title": "Roll over and rise",
       "source_folder": "01020_roll-over_take013_chr01_90Hz_29dof",
       "media": {
-        "frames": 488,
-        "fps": 50,
+        "frames": 244,
         "duration_seconds": 9.76,
-        "resolution": "1280x720"
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
@@ -330,10 +337,10 @@
       "title": "Burpee",
       "source_folder": "01040_burpee_take094_chr01_90Hz_29dof",
       "media": {
-        "frames": 541,
-        "fps": 50,
-        "duration_seconds": 10.82,
-        "resolution": "1280x720"
+        "frames": 271,
+        "duration_seconds": 10.84,
+        "fps": 25,
+        "resolution": "960x540"
       },
       "scores": {
         "gmt": {
