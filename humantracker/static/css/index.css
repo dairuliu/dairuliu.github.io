@@ -719,6 +719,8 @@ input:focus-visible {
 .tracker-meta p {
   color: #999999;
   font-size: 0.7rem;
+  line-height: 1.65;
+  text-align: right;
 }
 
 .tracker-meta strong {
