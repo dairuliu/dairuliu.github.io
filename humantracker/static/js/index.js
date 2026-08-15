@@ -108,8 +108,8 @@ function loadPanel(panel = activePanel) {
   const videos = panelVideos(panel);
   const metadata = Promise.all(videos.map(waitForMetadata));
   videos.forEach((video) => {
+    video.preload = "auto";
     video.src = video.dataset.src;
-    video.preload = "metadata";
     video.load();
   });
 
@@ -125,6 +125,12 @@ function loadPanel(panel = activePanel) {
 
 function leader(videos = panelVideos()) {
   return videos.reduce((longest, video) => video.duration > longest.duration ? video : longest);
+}
+
+function preloadPanel(panel = activePanel) {
+  void loadPanel(panel).catch((error) => {
+    console.warn("Unable to preload comparison media", error);
+  });
 }
 
 function setSharedTime(seconds, panel = activePanel) {
@@ -285,6 +291,7 @@ function activatePanel(name) {
     updateTime(0, 0);
     loadStatus.textContent = "";
   }
+  preloadPanel();
 }
 
 function updatePageButtons() {
@@ -311,6 +318,7 @@ function activatePage(index) {
     updateTime(0, 0);
   }
   loadStatus.textContent = "";
+  preloadPanel();
 }
 
 tabs.forEach((tab, index) => {
@@ -367,3 +375,4 @@ const sectionObserver = new IntersectionObserver(([entry]) => {
 sectionObserver.observe(comparisonSection);
 updatePlayButton();
 updatePageButtons();
+preloadPanel();
