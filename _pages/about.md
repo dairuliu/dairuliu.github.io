@@ -26,7 +26,7 @@ My research focuses on building generalizable embodied agents that can perceive,
 
 ## News
 
-* **[2026-08-21]** **EscapeCraft-4D** is accepted to **EMNLP 2026**.
+* **[2026-08]** **EscapeCraft-4D** is accepted to **EMNLP 2026**.
 * **[2026-06]** **HumanTracker** is accepted to **ECCV 2026**.
 * **[2026-05]** **LIMMT** is accepted to **ICML 2026**.
 * **[2026-02]** **Humanoid-GPT** is accepted to **CVPR 2026**.
