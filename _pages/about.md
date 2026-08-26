@@ -26,9 +26,10 @@ My research focuses on building generalizable embodied agents that can perceive,
 
 ## News
 
-* **[2026-06]** One paper accepted to **ECCV 2026**.
-* **[2026-05]** One paper accepted to **ICML 2026**.
-* **[2026-02]** One paper accepted to **CVPR 2026**.
+* **[2026-08-21]** **EscapeCraft-4D** is accepted to **EMNLP 2026**.
+* **[2026-06]** **HumanTracker** is accepted to **ECCV 2026**.
+* **[2026-05]** **LIMMT** is accepted to **ICML 2026**.
+* **[2026-02]** **Humanoid-GPT** is accepted to **CVPR 2026**.
 * **[2025-12]** Started my research internship at **GALBOT**.
 * **[2025-05]** Released our work on **Visual Abstract Thinking**.
 * **[2024-09]** Awarded the **National Scholarship**.
