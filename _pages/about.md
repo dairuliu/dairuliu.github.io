@@ -67,6 +67,22 @@ My research focuses on building generalizable embodied agents that can perceive,
 
   <article class="minimal-publication">
     <div class="minimal-publication-media">
+      <img src="{{ base_path }}/images/teasers/esc4d.png" alt="4D Escape Room teaser">
+      <span class="minimal-publication-badge">EMNLP</span>
+    </div>
+    <div>
+      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2603.15467">Evaluating Time Awareness and Cross-modal Active Perception of Large Models via 4D Escape Room Task</a></p>
+      <p class="minimal-publication-authors">Yurui Dong*, Ziyue Wang*, <strong>Dairu Liu*</strong>, Shuyun Lu*, Xuechen Liu*, Fuwen Luo, Peng Li&dagger;, Yang Liu&dagger;</p>
+      <p class="minimal-publication-venue"><em>Conference on Empirical Methods in Natural Language Processing <strong>(EMNLP)</strong>, 2026.</em></p>
+      <div class="minimal-publication-links">
+        <a href="https://arxiv.org/abs/2603.15467">Paper</a>
+        <a href="https://github.com/THUNLP-MT/EscapeCraft-4D">Project</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="minimal-publication">
+    <div class="minimal-publication-media">
       <img src="{{ base_path }}/images/teasers/LIMMT.png" alt="LIMMT teaser">
       <span class="minimal-publication-badge">ICML</span>
     </div>
@@ -92,21 +108,6 @@ My research focuses on building generalizable embodied agents that can perceive,
       <div class="minimal-publication-links">
         <a href="https://arxiv.org/abs/2505.20164">Paper</a>
         <a href="https://github.com/THUNLP-MT/VAT">Project</a>
-      </div>
-    </div>
-  </article>
-
-  <article class="minimal-publication">
-    <div class="minimal-publication-media">
-      <img src="{{ base_path }}/images/teasers/esc4d.png" alt="4D Escape Room teaser">
-      <span class="minimal-publication-badge">In Submission</span>
-    </div>
-    <div>
-      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2603.15467">Evaluating Time Awareness and Cross-modal Active Perception of Large Models via 4D Escape Room Task</a></p>
-      <p class="minimal-publication-authors">Yurui Dong*, Ziyue Wang*, <strong>Dairu Liu*</strong>, Shuyun Lu*, Xuechen Liu*, Fuwen Luo, Peng Li&dagger;, Yang Liu&dagger;</p>
-      <div class="minimal-publication-links">
-        <a href="https://arxiv.org/abs/2603.15467">Paper</a>
-        <a href="https://github.com/THUNLP-MT/EscapeCraft-4D">Project</a>
       </div>
     </div>
   </article>
