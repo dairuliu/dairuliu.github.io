@@ -41,6 +41,7 @@
           <a class="navbar-item" href="#humanscore">HumanScore</a>
           <a class="navbar-item" href="#comparisons">Comparisons</a>
           <a class="navbar-item" href="#benchmark">Benchmark</a>
+          <a class="navbar-item" href="#results">Results</a>
           <a class="navbar-item" href="#citation">Citation</a>
         </div>
       </div>
@@ -465,6 +466,75 @@
             <dl><div><dt>Hours</dt><dd>4.59</dd></div><div><dt>Clips</dt><dd>1,640</dd></div></dl>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="results" class="section section-rule" aria-labelledby="results-heading">
+      <div class="container page-container">
+        <div class="section-heading centered-heading">
+          <h2 id="results-heading" class="title is-2">Zero-shot results</h2>
+          <p id="results-summary" class="section-intro">Succ (%) ↑, MPJPE (rad) ↓, HumanScore ↑ on a 0–100 scale, computed on the test split. Numbers match Table 2 of the paper, except SONIC 1.1, which NVIDIA released after the paper and which is measured here under the same protocol.</p>
+        </div>
+
+        <div class="table-container results-table-wrap" role="region" aria-label="Zero-shot benchmark results" tabindex="0">
+          <table class="table is-fullwidth results-table" aria-describedby="results-summary results-note">
+            <caption class="is-sr-only">Zero-shot tracking results for four motion families.</caption>
+            <thead>
+              <tr>
+                <th scope="col" rowspan="2">Method</th>
+                <th class="group-start" scope="colgroup" colspan="3">Daily</th>
+                <th class="group-start" scope="colgroup" colspan="3">Highly Dynamic</th>
+                <th class="group-start" scope="colgroup" colspan="3">Interaction</th>
+                <th class="group-start" scope="colgroup" colspan="3">Ground</th>
+              </tr>
+              <tr>
+                <th class="group-start" scope="col">Succ</th><th scope="col">MPJPE</th><th scope="col">HScore</th>
+                <th class="group-start" scope="col">Succ</th><th scope="col">MPJPE</th><th scope="col">HScore</th>
+                <th class="group-start" scope="col">Succ</th><th scope="col">MPJPE</th><th scope="col">HScore</th>
+                <th class="group-start" scope="col">Succ</th><th scope="col">MPJPE</th><th scope="col">HScore</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-method="gmt">
+                <th scope="row">GMT</th>
+                <td class="group-start">17.0</td><td>0.250</td><td>2.4</td>
+                <td class="group-start">36.2</td><td>0.196</td><td>7.0</td>
+                <td class="group-start">81.4</td><td>0.205</td><td>11.7</td>
+                <td class="group-start">0.0</td><td>0.456</td><td>4.0</td>
+              </tr>
+              <tr data-method="twist2">
+                <th scope="row">TWIST2</th>
+                <td class="group-start">60.1</td><td>0.105</td><td>10.1</td>
+                <td class="group-start">39.9</td><td>0.112</td><td>16.9</td>
+                <td class="group-start">91.3</td><td>0.111</td><td>28.3</td>
+                <td class="group-start">0.0</td><td>0.341</td><td>4.5</td>
+              </tr>
+              <tr data-method="sonic">
+                <th scope="row">SONIC</th>
+                <td class="group-start">93.8</td><td>0.102</td><td>49.5</td>
+                <td class="group-start">82.1</td><td>0.118</td><td>41.0</td>
+                <td class="group-start">97.6</td><td>0.128</td><td>54.6</td>
+                <td class="group-start">20.1</td><td>0.231</td><td>26.5</td>
+              </tr>
+              <tr data-method="sonic-1-1">
+                <th scope="row">SONIC 1.1</th>
+                <td class="group-start"><strong>94.4</strong></td><td>0.093</td><td>43.6</td>
+                <td class="group-start">84.7</td><td>0.108</td><td>38.5</td>
+                <td class="group-start"><strong>97.9</strong></td><td>0.111</td><td>48.9</td>
+                <td class="group-start">13.4</td><td><strong>0.198</strong></td><td><strong>33.9</strong></td>
+              </tr>
+              <tr data-method="humanoid-gpt">
+                <th scope="row">Humanoid-GPT</th>
+                <td class="group-start"><strong>94.4</strong></td><td><strong>0.046</strong></td><td><strong>54.7</strong></td>
+                <td class="group-start"><strong>86.9</strong></td><td><strong>0.047</strong></td><td><strong>49.2</strong></td>
+                <td class="group-start">97.2</td><td><strong>0.070</strong></td><td><strong>56.8</strong></td>
+                <td class="group-start"><strong>32.9</strong></td><td>0.216</td><td>24.9</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p id="results-note" class="results-note">Every tracker keeps its native observation and action-processing stack, receives the same retargeted references, and is measured by the same evaluator under the SONIC termination criterion.</p>
       </div>
     </section>
 
