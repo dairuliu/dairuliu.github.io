@@ -117,3 +117,7 @@ My research focuses on building generalizable embodied agents that can perceive,
     </div>
   </article>
 </div>
+
+## Awards
+
+* **[2024]** **National Scholarship**.
