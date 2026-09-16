@@ -13,7 +13,7 @@ redirect_from:
 
 I am a senior undergraduate majoring in Software Engineering at **Nankai University** and an incoming PhD student at [**EPIC Lab**](https://pku-epic.github.io), **Peking University**, advised by Prof. [**He Wang**](https://hughw19.github.io).
 
-Currently, I work on scaling humanoid motion tracking and developing human-aligned whole-body control policies as a research intern at <a href="https://www.galbot.com"><img class="bio-icon" src="{{ base_path }}/images/icons/galbot.png" alt="" width="16" height="16"> <strong>GALBOT</strong></a>, advised by Prof. [**He Wang**](https://hughw19.github.io) and Prof. [**Li Yi**](https://ericyi.github.io). Previously, I was a research intern at **THUNLP, Tsinghua University**, where I studied multimodal reasoning with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/).
+Currently, I work on humanoid robotics as a research intern at <a href="https://www.galbot.com"><img class="bio-icon" src="{{ base_path }}/images/icons/galbot.png" alt="" width="16" height="16"> <strong>GALBOT</strong></a>, advised by Prof. [**He Wang**](https://hughw19.github.io) and Prof. [**Li Yi**](https://ericyi.github.io). Previously, I was a research intern at **THUNLP, Tsinghua University**, where I studied multimodal reasoning with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/).
 
 My research focuses on building generalizable embodied agents that can perceive, reason, and act in complex real-world environments.
 
