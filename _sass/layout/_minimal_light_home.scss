@@ -26,6 +26,13 @@
   vertical-align: -2px;
 }
 
+.minimal-light-home .link-icon {
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+  font-size: 0.9em;
+}
+
 .minimal-light-shell {
   display: grid;
   grid-template-columns: 250px minmax(0, 640px);

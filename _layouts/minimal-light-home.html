@@ -31,14 +31,14 @@ layout: compress
         <p class="minimal-light-role">Undergraduate Student</p>
         <p class="minimal-light-affiliation">Nankai University</p>
         {% if author.email %}
-          <p class="minimal-light-email"><a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+          <p class="minimal-light-email"><a href="mailto:{{ author.email }}"><i class="fas fa-envelope link-icon" aria-hidden="true"></i> {{ author.email }}</a></p>
         {% endif %}
 
         <nav class="minimal-light-links" aria-label="Profile links">
           {% if author.googlescholar %}
             <a href="{{ author.googlescholar }}" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
           {% endif %}
-          <a href="{{ base_path }}/files/DairuLiu_CV.pdf" aria-label="CV">CV</a>
+          <a href="{{ base_path }}/files/DairuLiu_CV.pdf" aria-label="CV"><i class="fas fa-file-pdf link-icon" aria-hidden="true"></i> CV</a>
           {% if author.github %}
             <a href="https://github.com/{{ author.github }}" aria-label="GitHub"><i class="fab fa-github"></i></a>
           {% endif %}
