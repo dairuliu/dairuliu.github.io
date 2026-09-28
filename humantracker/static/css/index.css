@@ -503,6 +503,15 @@ input:focus-visible {
   color: var(--accent);
 }
 
+.additional-results {
+  margin-top: 3rem;
+}
+
+.additional-results-table {
+  font-size: 0.9rem;
+  min-width: 560px;
+}
+
 .results-note {
   color: var(--muted);
   font-size: 0.84rem;

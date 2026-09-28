@@ -535,6 +535,29 @@
         </div>
 
         <p id="results-note" class="results-note">Every tracker keeps its native observation and action-processing stack, receives the same retargeted references, and is measured by the same evaluator under the SONIC termination criterion.</p>
+
+        <div class="additional-results">
+          <h3 class="title is-4">Additional released G1 trackers</h3>
+          <p id="additional-results-summary" class="results-note">Evaluated on all 2,500 HumanTracker test motions on 2026-09-28 with the same 50 Hz scene, whole-body termination, and HumanScore checkpoint. Each policy retains its released YAML joint order, action scale, kp, and kd. The previously reported trackers above were not rerun.</p>
+          <div class="table-container results-table-wrap" role="region" aria-label="Additional G1 tracker results" tabindex="0">
+            <table class="table is-fullwidth results-table additional-results-table" aria-describedby="additional-results-summary additional-results-note">
+              <caption class="is-sr-only">Aggregate results for nine additional released G1 trackers.</caption>
+              <thead><tr><th scope="col">Method</th><th scope="col">Succ (%) ↑</th><th scope="col">MPJPE (rad) ↓</th><th scope="col">HumanScore (0–100) ↑</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">ScaleBFM-M</th><td>86.5</td><td>0.093</td><td>47.5</td></tr>
+                <tr><th scope="row">HEFT</th><td>88.2</td><td>0.062</td><td>47.3</td></tr>
+                <tr><th scope="row">ScaleBFM-XL</th><td>86.5</td><td>0.091</td><td>46.1</td></tr>
+                <tr><th scope="row">GRIT v0.0.1</th><td>85.2</td><td>0.113</td><td>42.7</td></tr>
+                <tr><th scope="row">TeleopIT*</th><td>81.6</td><td>0.104</td><td>38.6</td></tr>
+                <tr><th scope="row">MimicLite-PPO</th><td>80.1</td><td>0.089</td><td>31.2</td></tr>
+                <tr><th scope="row">MimicLite-ROA</th><td>80.5</td><td>0.093</td><td>28.6</td></tr>
+                <tr><th scope="row">HoloMotion</th><td>82.2</td><td>0.092</td><td>28.3</td></tr>
+                <tr><th scope="row">Mimic Lite v1.1</th><td>78.5</td><td>0.090</td><td>28.1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p id="additional-results-note" class="results-note">All nine runs covered every test motion without evaluation exceptions. *TeleopIT used the official TeleopIT G1 29-DoF XML because the legacy XML named in its released YAML is absent; exact kinematic equivalence is unverified. See the <a href="https://github.com/GalaxyGeneralRobotics/HumanTracker/blob/main/src/humantracker/eval/RESULTS_sim2real.md" target="_blank" rel="noopener noreferrer">per-family results and reproduction settings</a> and <a href="https://github.com/GalaxyGeneralRobotics/HumanTracker/blob/main/src/humantracker/eval/README_sim2real.md" target="_blank" rel="noopener noreferrer">setup guide</a>.</p>
+        </div>
       </div>
     </section>
 
