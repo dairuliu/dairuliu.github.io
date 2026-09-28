@@ -473,7 +473,7 @@
       <div class="container page-container">
         <div class="section-heading centered-heading">
           <h2 id="results-heading" class="title is-2">Zero-shot results</h2>
-          <p id="results-summary" class="section-intro">Succ (%) ↑, MPJPE (rad) ↓, HumanScore ↑ on a 0–100 scale, computed on the test split. Numbers match Table 2 of the paper, except SONIC 1.1, which NVIDIA released after the paper and which is measured here under the same protocol.</p>
+          <p id="results-summary" class="section-intro">Succ (%) ↑, MPJPE (rad) ↓, HumanScore ↑ on a 0–100 scale, computed on the test split. The GMT, TWIST2, SONIC, and Humanoid-GPT rows match Table 2 of the paper. SONIC 1.1 and nine additional released policies were evaluated under the same protocol.</p>
         </div>
 
         <div class="table-container results-table-wrap" role="region" aria-label="Zero-shot benchmark results" tabindex="0">
@@ -521,43 +521,84 @@
                 <td class="group-start"><strong>94.4</strong></td><td>0.093</td><td>43.6</td>
                 <td class="group-start">84.7</td><td>0.108</td><td>38.5</td>
                 <td class="group-start"><strong>97.9</strong></td><td>0.111</td><td>48.9</td>
-                <td class="group-start">13.4</td><td><strong>0.198</strong></td><td><strong>33.9</strong></td>
+                <td class="group-start">13.4</td><td>0.198</td><td>33.9</td>
               </tr>
               <tr data-method="humanoid-gpt">
                 <th scope="row">Humanoid-GPT</th>
                 <td class="group-start"><strong>94.4</strong></td><td><strong>0.046</strong></td><td><strong>54.7</strong></td>
                 <td class="group-start"><strong>86.9</strong></td><td><strong>0.047</strong></td><td><strong>49.2</strong></td>
-                <td class="group-start">97.2</td><td><strong>0.070</strong></td><td><strong>56.8</strong></td>
+                <td class="group-start">97.2</td><td>0.070</td><td><strong>56.8</strong></td>
                 <td class="group-start"><strong>32.9</strong></td><td>0.216</td><td>24.9</td>
+              </tr>
+              <tr data-method="scalebfm-m">
+                <th scope="row">ScaleBFM-M</th>
+                <td class="group-start">90.8</td><td>0.094</td><td>44.5</td>
+                <td class="group-start">72.4</td><td>0.091</td><td>39.3</td>
+                <td class="group-start">96.5</td><td>0.084</td><td>54.0</td>
+                <td class="group-start">17.7</td><td>0.186</td><td>43.4</td>
+              </tr>
+              <tr data-method="heft">
+                <th scope="row">HEFT</th>
+                <td class="group-start">93.2</td><td>0.056</td><td>46.1</td>
+                <td class="group-start">75.7</td><td>0.061</td><td>40.5</td>
+                <td class="group-start">97.5</td><td><strong>0.063</strong></td><td>51.6</td>
+                <td class="group-start">15.9</td><td>0.176</td><td>31.7</td>
+              </tr>
+              <tr data-method="scalebfm-xl">
+                <th scope="row">ScaleBFM-XL</th>
+                <td class="group-start">90.1</td><td>0.093</td><td>44.2</td>
+                <td class="group-start">74.3</td><td>0.089</td><td>37.5</td>
+                <td class="group-start">96.7</td><td>0.082</td><td>51.2</td>
+                <td class="group-start">17.1</td><td><strong>0.158</strong></td><td>40.8</td>
+              </tr>
+              <tr data-method="grit-v0.0.1">
+                <th scope="row">GRIT v0.0.1</th>
+                <td class="group-start">90.2</td><td>0.105</td><td>40.2</td>
+                <td class="group-start">65.7</td><td>0.115</td><td>41.4</td>
+                <td class="group-start">96.5</td><td>0.114</td><td>48.5</td>
+                <td class="group-start">11.0</td><td>0.241</td><td>24.9</td>
+              </tr>
+              <tr data-method="teleopit">
+                <th scope="row">TeleopIT</th>
+                <td class="group-start">84.0</td><td>0.096</td><td>34.0</td>
+                <td class="group-start">54.9</td><td>0.110</td><td>35.8</td>
+                <td class="group-start">96.2</td><td>0.105</td><td>45.7</td>
+                <td class="group-start">13.4</td><td>0.229</td><td><strong>47.1</strong></td>
+              </tr>
+              <tr data-method="mimiclite-ppo">
+                <th scope="row">MimicLite-PPO</th>
+                <td class="group-start">81.1</td><td>0.080</td><td>28.0</td>
+                <td class="group-start">58.6</td><td>0.096</td><td>28.1</td>
+                <td class="group-start">95.2</td><td>0.089</td><td>37.9</td>
+                <td class="group-start">7.9</td><td>0.239</td><td>20.1</td>
+              </tr>
+              <tr data-method="mimiclite-roa">
+                <th scope="row">MimicLite-ROA</th>
+                <td class="group-start">83.1</td><td>0.080</td><td>24.8</td>
+                <td class="group-start">59.0</td><td>0.112</td><td>26.9</td>
+                <td class="group-start">95.2</td><td>0.093</td><td>35.1</td>
+                <td class="group-start">2.4</td><td>0.290</td><td>26.6</td>
+              </tr>
+              <tr data-method="holomotion">
+                <th scope="row">HoloMotion</th>
+                <td class="group-start">84.0</td><td>0.088</td><td>20.4</td>
+                <td class="group-start">63.4</td><td>0.101</td><td>27.2</td>
+                <td class="group-start">94.9</td><td>0.091</td><td>40.4</td>
+                <td class="group-start">18.3</td><td>0.172</td><td>35.1</td>
+              </tr>
+              <tr data-method="mimiclite-v1.1">
+                <th scope="row">Mimic Lite v1.1</th>
+                <td class="group-start">80.1</td><td>0.080</td><td>25.0</td>
+                <td class="group-start">51.5</td><td>0.114</td><td>22.8</td>
+                <td class="group-start">94.4</td><td>0.087</td><td>34.3</td>
+                <td class="group-start">7.3</td><td>0.252</td><td>23.1</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <p id="results-note" class="results-note">Every tracker keeps its native observation and action-processing stack, receives the same retargeted references, and is measured by the same evaluator under the SONIC termination criterion.</p>
+<p id="results-note" class="results-note">Every tracker keeps its native observation and action-processing stack, receives the same retargeted references, and is measured by the same evaluator under the SONIC termination criterion.</p>
 
-        <div class="additional-results">
-          <h3 class="title is-4">Additional released G1 trackers</h3>
-          <p id="additional-results-summary" class="results-note">Evaluated on all 2,500 HumanTracker test motions on 2026-09-28 with the same 50 Hz scene, whole-body termination, and HumanScore checkpoint. Each policy retains its released YAML joint order, action scale, kp, and kd. The previously reported trackers above were not rerun.</p>
-          <div class="table-container results-table-wrap" role="region" aria-label="Additional G1 tracker results" tabindex="0">
-            <table class="table is-fullwidth results-table additional-results-table" aria-describedby="additional-results-summary additional-results-note">
-              <caption class="is-sr-only">Aggregate results for nine additional released G1 trackers.</caption>
-              <thead><tr><th scope="col">Method</th><th scope="col">Succ (%) ↑</th><th scope="col">MPJPE (rad) ↓</th><th scope="col">HumanScore (0–100) ↑</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">ScaleBFM-M</th><td>86.5</td><td>0.093</td><td>47.5</td></tr>
-                <tr><th scope="row">HEFT</th><td>88.2</td><td>0.062</td><td>47.3</td></tr>
-                <tr><th scope="row">ScaleBFM-XL</th><td>86.5</td><td>0.091</td><td>46.1</td></tr>
-                <tr><th scope="row">GRIT v0.0.1</th><td>85.2</td><td>0.113</td><td>42.7</td></tr>
-                <tr><th scope="row">TeleopIT*</th><td>81.6</td><td>0.104</td><td>38.6</td></tr>
-                <tr><th scope="row">MimicLite-PPO</th><td>80.1</td><td>0.089</td><td>31.2</td></tr>
-                <tr><th scope="row">MimicLite-ROA</th><td>80.5</td><td>0.093</td><td>28.6</td></tr>
-                <tr><th scope="row">HoloMotion</th><td>82.2</td><td>0.092</td><td>28.3</td></tr>
-                <tr><th scope="row">Mimic Lite v1.1</th><td>78.5</td><td>0.090</td><td>28.1</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p id="additional-results-note" class="results-note">All nine runs covered every test motion without evaluation exceptions. *TeleopIT used the official TeleopIT G1 29-DoF XML because the legacy XML named in its released YAML is absent; exact kinematic equivalence is unverified. See the <a href="https://github.com/GalaxyGeneralRobotics/HumanTracker/blob/main/src/humantracker/eval/RESULTS_sim2real.md" target="_blank" rel="noopener noreferrer">per-family results and reproduction settings</a> and <a href="https://github.com/GalaxyGeneralRobotics/HumanTracker/blob/main/src/humantracker/eval/README_sim2real.md" target="_blank" rel="noopener noreferrer">setup guide</a>.</p>
-        </div>
       </div>
     </section>
 
