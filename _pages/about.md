@@ -25,6 +25,9 @@ My research focuses on building generalizable embodied agents that can perceive,
 
 ## News
 
+* **[2026]** Awarded the **National Scholarship**.
+* **[2026-10]** Released **PhysRSI-eval**, studying physical recursive self-improvement and observational scaling of LLM policies.
+* **[2026-09]** Released our technical report on **GPT-6 Astra as Embodied Policies**.
 * **[2026-08]** **EscapeCraft-4D** is accepted to **EMNLP 2026**.
 * **[2026-06]** **HumanTracker** is accepted to **ECCV 2026**.
 * **[2026-05]** **LIMMT** is accepted to **ICML 2026**.
@@ -33,7 +36,9 @@ My research focuses on building generalizable embodied agents that can perceive,
 * **[2025-05]** Released our work on **Visual Abstract Thinking**.
 * **[2024-09]** Awarded the **National Scholarship**.
 
-## Publications
+## Publications & Preprints
+
+*\* Equal contribution; &dagger; Corresponding author.*
 
 <div class="minimal-publications">
   <article class="minimal-publication">
@@ -43,7 +48,7 @@ My research focuses on building generalizable embodied agents that can perceive,
     </div>
     <div>
       <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2608.13555">HumanTracker: Towards Comprehensive and Human-Aligned Motion Tracking Benchmark</a></p>
-      <p class="minimal-publication-authors"><strong>Dairu Liu*</strong>, Zekun Qi*, Jiayu Zeng*, Yu Guan, Chenghuai Lin, Xuchuan Chen, Xinqiang Yu, Wenyao Zhang, He Wang&dagger;, Li Yi&dagger;</p>
+      <p class="minimal-publication-authors"><strong>Dairu Liu*</strong>, Zekun Qi*, Jiayu Zeng*, Ruixi Yu, Yu Guan, Yintianrun Zhang, Xuchuan Chen, Sikai Liang, Zekai Li, Chenghuai Lin, Xinqiang Yu, Wenyao Zhang, He Wang&dagger;, Li Yi&dagger;</p>
       <p class="minimal-publication-venue"><em>European Conference on Computer Vision <strong>(ECCV)</strong>, 2026.</em></p>
       <div class="minimal-publication-links">
         <a href="https://arxiv.org/abs/2608.13555">Paper</a>
@@ -60,7 +65,7 @@ My research focuses on building generalizable embodied agents that can perceive,
     </div>
     <div>
       <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2606.03985">Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking</a></p>
-      <p class="minimal-publication-authors">Zekun Qi*, Xuchuan Chen*, <strong>Dairu Liu*</strong>, Chenghuai Lin*, Yunrui Lian, Zhikai Zhang, Wenyao Zhang, Yu Guan, Jilong Wang, Xinqiang Yu, He Wang&dagger;, Li Yi&dagger;</p>
+      <p class="minimal-publication-authors">Zekun Qi*, Xuchuan Chen*, <strong>Dairu Liu*</strong>, Chenghuai Lin*, Yunrui Lian, Sikai Liang, Zhikai Zhang, Yu Guan, Jilong Wang, Wenyao Zhang, Xinqiang Yu, He Wang&dagger;, Li Yi&dagger;</p>
       <p class="minimal-publication-venue"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2026.</em></p>
       <div class="minimal-publication-links">
         <a href="https://arxiv.org/abs/2606.03985">Paper</a>
@@ -77,11 +82,27 @@ My research focuses on building generalizable embodied agents that can perceive,
     </div>
     <div>
       <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2603.15467">Evaluating Time Awareness and Cross-modal Active Perception of Large Models via 4D Escape Room Task</a></p>
-      <p class="minimal-publication-authors">Yurui Dong*, Ziyue Wang*, <strong>Dairu Liu*</strong>, Shuyun Lu*, Xuechen Liu*, Fuwen Luo, Peng Li&dagger;, Yang Liu&dagger;</p>
+      <p class="minimal-publication-authors">Yurui Dong*, Ziyue Wang*, Shuyun Lu*, <strong>Dairu Liu*</strong>, Xuechen Liu*, Fuwen Luo, Peng Li&dagger;, Yang Liu&dagger;</p>
       <p class="minimal-publication-venue"><em>Conference on Empirical Methods in Natural Language Processing <strong>(EMNLP)</strong>, 2026.</em></p>
       <div class="minimal-publication-links">
         <a href="https://arxiv.org/abs/2603.15467">Paper</a>
         <a href="https://github.com/THUNLP-MT/EscapeCraft-4D">Project</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="minimal-publication">
+    <div class="minimal-publication-media">
+      <img src="{{ base_path }}/images/teasers/vat.png" alt="Visual Abstract Thinking teaser">
+      <span class="minimal-publication-badge">NeurIPS WS</span>
+    </div>
+    <div>
+      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2505.20164">Thinking with Visual Abstract: Enhancing Multimodal Reasoning via Visual Abstraction</a></p>
+      <p class="minimal-publication-authors"><strong>Dairu Liu*</strong>, Ziyue Wang*, Minyuan Ruan*, Fuwen Luo, Chi Chen, Peng Li&dagger;, Yang Liu&dagger;</p>
+      <p class="minimal-publication-venue"><em>NeurIPS 2025 Workshop.</em></p>
+      <div class="minimal-publication-links">
+        <a href="https://arxiv.org/abs/2505.20164">Paper</a>
+        <a href="https://github.com/THUNLP-MT/VAT">Project</a>
       </div>
     </div>
   </article>
@@ -103,16 +124,31 @@ My research focuses on building generalizable embodied agents that can perceive,
 
   <article class="minimal-publication">
     <div class="minimal-publication-media">
-      <img src="{{ base_path }}/images/teasers/vat.png" alt="Visual Abstract Thinking teaser">
-      <span class="minimal-publication-badge">NeurIPS WS</span>
+      <img src="{{ base_path }}/images/teasers/physrsi_teaser.jpg" alt="PhysRSI-eval overview">
+      <span class="minimal-publication-badge">Preprint</span>
     </div>
     <div>
-      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2505.20164">Thinking with Visual Abstract: Enhancing Multimodal Reasoning via Visual Abstraction</a></p>
-      <p class="minimal-publication-authors"><strong>Dairu Liu*</strong>, Ziyue Wang*, Minyuan Ruan*, Fuwen Luo, Chi Chen, Peng Li&dagger;, Yang Liu&dagger;</p>
-      <p class="minimal-publication-venue"><em>NeurIPS 2025 Workshop.</em></p>
+      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2610.26848">Where is Physical RSI capability from? An Observational Scaling Law of LLM-as-policy</a></p>
+      <p class="minimal-publication-authors">Zekai Li*, Jiayi Yu*, Jinlu Zhang*, Luyang Niu*, Zekun Qi*, Jun Zheng, Xuchuan Chen, <strong>Dairu Liu</strong>, Yintianrun Zhang, He Wang&dagger;, Li Yi&dagger;</p>
+      <p class="minimal-publication-venue"><em>arXiv preprint, 2026.</em></p>
       <div class="minimal-publication-links">
-        <a href="https://arxiv.org/abs/2505.20164">Paper</a>
-        <a href="https://github.com/THUNLP-MT/VAT">Project</a>
+        <a href="https://arxiv.org/abs/2610.26848">Paper</a>
+        <a href="https://physrsi-eval.github.io/">Project</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="minimal-publication">
+    <div class="minimal-publication-media">
+      <img src="{{ base_path }}/images/teasers/astra_embodied_teaser.png" alt="GPT-6 Astra embodied policy evaluation">
+      <span class="minimal-publication-badge">Tech Report</span>
+    </div>
+    <div>
+      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2609.38537">Systematically Exploring the Capabilities of GPT-6 Astra as Embodied Policies</a></p>
+      <p class="minimal-publication-authors">Galbot Team (including <strong>Dairu Liu</strong>)</p>
+      <p class="minimal-publication-venue"><em>Technical report, arXiv, 2026.</em></p>
+      <div class="minimal-publication-links">
+        <a href="https://arxiv.org/abs/2609.38537">Paper</a>
       </div>
     </div>
   </article>
@@ -120,4 +156,5 @@ My research focuses on building generalizable embodied agents that can perceive,
 
 ## Awards
 
+* **[2026]** **National Scholarship**.
 * **[2024]** **National Scholarship**.
