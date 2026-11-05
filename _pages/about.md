@@ -15,6 +15,8 @@ I am a senior undergraduate majoring in Software Engineering at **Nankai Univers
 
 Currently, I work on humanoid robotics as a research intern at <a href="https://www.galbot.com"><img class="bio-icon" src="{{ base_path }}/images/icons/galbot.png" alt="" width="16" height="16"> <strong>GALBOT</strong></a>, advised by Prof. [**He Wang**](https://hughw19.github.io) and Prof. [**Li Yi**](https://ericyi.github.io). Previously, I was a research intern at **THUNLP, Tsinghua University**, where I studied multimodal reasoning with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/).
 
+At GALBOT, I explore humanoid robot learning across **S2 reasoning, S1 vision-language-action policies, and S0 whole-body control**. My work includes developing humanoid **VLA policies for loco-manipulation**, exploring **human egocentric data** for humanoid learning, and investigating the training of **AstraBrain-WBC** as a whole-body control foundation model and low-level cerebellum for higher-level policies.
+
 My research focuses on building generalizable embodied agents that can perceive, reason, and act in complex real-world environments.
 
 **Please feel free to contact me if you are interested in my work or would like to chat about any topic.**
