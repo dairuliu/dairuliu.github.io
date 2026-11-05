@@ -15,7 +15,7 @@ I am a senior undergraduate majoring in Software Engineering at **Nankai Univers
 
 Currently, I work on humanoid robotics as a research intern at <a href="https://www.galbot.com"><img class="bio-icon" src="{{ base_path }}/images/icons/galbot.png" alt="" width="16" height="16"> <strong>GALBOT</strong></a>, advised by Prof. [**He Wang**](https://hughw19.github.io) and Prof. [**Li Yi**](https://ericyi.github.io). Previously, I was a research intern at **THUNLP, Tsinghua University**, where I studied multimodal reasoning with Prof. [**Peng Li**](https://lpeng.net) and Prof. [**Yang Liu**](https://nlp.csai.tsinghua.edu.cn/~ly/).
 
-At GALBOT, I explore humanoid robot learning across **S2 reasoning, S1 vision-language-action policies, and S0 whole-body control**. My work includes developing humanoid **VLA policies for loco-manipulation**, exploring **human egocentric data** for humanoid learning, and investigating the training of **AstraBrain-WBC** as a whole-body control foundation model and low-level cerebellum for higher-level policies.
+At GALBOT, I explore humanoid robot learning across **S2 reasoning, S1 vision-language-action policies, and S0 whole-body control**. My work includes developing humanoid **VLA policies for loco-manipulation**, investigating the training of **AstraBrain-WBC** as a whole-body control foundation model and low-level cerebellum for higher-level policies, and exploring **human egocentric data** for humanoid learning.
 
 My research focuses on building generalizable embodied agents that can perceive, reason, and act in complex real-world environments.
 
@@ -43,6 +43,21 @@ My research focuses on building generalizable embodied agents that can perceive,
 *\* Equal contribution; &dagger; Corresponding author.*
 
 <div class="minimal-publications">
+  <article class="minimal-publication">
+    <div class="minimal-publication-media">
+      <img src="{{ base_path }}/images/teasers/astra_embodied_teaser.png" alt="GPT-6 Astra embodied policy evaluation">
+      <span class="minimal-publication-badge">Tech Report</span>
+    </div>
+    <div>
+      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2609.38537">Systematically Exploring the Capabilities of GPT-6 Astra as Embodied Policies</a></p>
+      <p class="minimal-publication-authors">Galbot Team (including <strong>Dairu Liu</strong>)</p>
+      <p class="minimal-publication-venue"><em>Technical report, arXiv, 2026.</em></p>
+      <div class="minimal-publication-links">
+        <a href="https://arxiv.org/abs/2609.38537">Paper</a>
+      </div>
+    </div>
+  </article>
+
   <article class="minimal-publication">
     <div class="minimal-publication-media">
       <img src="{{ base_path }}/images/teasers/humantracker_teaser.png" alt="HumanTracker teaser">
@@ -84,7 +99,7 @@ My research focuses on building generalizable embodied agents that can perceive,
     </div>
     <div>
       <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2603.15467">Evaluating Time Awareness and Cross-modal Active Perception of Large Models via 4D Escape Room Task</a></p>
-      <p class="minimal-publication-authors">Yurui Dong*, Ziyue Wang*, Shuyun Lu*, <strong>Dairu Liu*</strong>, Xuechen Liu*, Fuwen Luo, Peng Li&dagger;, Yang Liu&dagger;</p>
+      <p class="minimal-publication-authors">Yurui Dong*, Ziyue Wang*, <strong>Dairu Liu*</strong>, Shuyun Lu*, Xuechen Liu*, Fuwen Luo, Peng Li&dagger;, Yang Liu&dagger;</p>
       <p class="minimal-publication-venue"><em>Conference on Empirical Methods in Natural Language Processing <strong>(EMNLP)</strong>, 2026.</em></p>
       <div class="minimal-publication-links">
         <a href="https://arxiv.org/abs/2603.15467">Paper</a>
@@ -111,28 +126,13 @@ My research focuses on building generalizable embodied agents that can perceive,
 
   <article class="minimal-publication">
     <div class="minimal-publication-media">
-      <img src="{{ base_path }}/images/teasers/LIMMT.png" alt="LIMMT teaser">
-      <span class="minimal-publication-badge">ICML</span>
-    </div>
-    <div>
-      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2606.06953">LIMMT: Less is More for Motion Tracking</a></p>
-      <p class="minimal-publication-authors">Yu Guan*, Zekun Qi*, Chenghuai Lin, Xuchuan Chen, <strong>Dairu Liu</strong>, Wenyao Zhang, Jilong Wang, Xinqiang Yu, He Wang&dagger;, Li Yi&dagger;</p>
-      <p class="minimal-publication-venue"><em>International Conference on Machine Learning <strong>(ICML)</strong>, 2026.</em></p>
-      <div class="minimal-publication-links">
-        <a href="https://arxiv.org/abs/2606.06953">Paper</a>
-      </div>
-    </div>
-  </article>
-
-  <article class="minimal-publication">
-    <div class="minimal-publication-media">
       <img src="{{ base_path }}/images/teasers/physrsi_teaser.jpg" alt="PhysRSI-eval overview">
-      <span class="minimal-publication-badge">Preprint</span>
+      <span class="minimal-publication-badge">Tech Report</span>
     </div>
     <div>
       <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2610.26848">Where is Physical RSI capability from? An Observational Scaling Law of LLM-as-policy</a></p>
       <p class="minimal-publication-authors">Zekai Li*, Jiayi Yu*, Jinlu Zhang*, Luyang Niu*, Zekun Qi*, Jun Zheng, Xuchuan Chen, <strong>Dairu Liu</strong>, Yintianrun Zhang, He Wang&dagger;, Li Yi&dagger;</p>
-      <p class="minimal-publication-venue"><em>arXiv preprint, 2026.</em></p>
+      <p class="minimal-publication-venue"><em>Technical report, arXiv, 2026.</em></p>
       <div class="minimal-publication-links">
         <a href="https://arxiv.org/abs/2610.26848">Paper</a>
         <a href="https://physrsi-eval.github.io/">Project</a>
@@ -142,15 +142,15 @@ My research focuses on building generalizable embodied agents that can perceive,
 
   <article class="minimal-publication">
     <div class="minimal-publication-media">
-      <img src="{{ base_path }}/images/teasers/astra_embodied_teaser.png" alt="GPT-6 Astra embodied policy evaluation">
-      <span class="minimal-publication-badge">Tech Report</span>
+      <img src="{{ base_path }}/images/teasers/LIMMT.png" alt="LIMMT teaser">
+      <span class="minimal-publication-badge">ICML</span>
     </div>
     <div>
-      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2609.38537">Systematically Exploring the Capabilities of GPT-6 Astra as Embodied Policies</a></p>
-      <p class="minimal-publication-authors">Galbot Team (including <strong>Dairu Liu</strong>)</p>
-      <p class="minimal-publication-venue"><em>Technical report, arXiv, 2026.</em></p>
+      <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2606.06953">LIMMT: Less is More for Motion Tracking</a></p>
+      <p class="minimal-publication-authors">Yu Guan*, Zekun Qi*, Chenghuai Lin, Xuchuan Chen, <strong>Dairu Liu</strong>, Wenyao Zhang, Jilong Wang, Xinqiang Yu, He Wang&dagger;, Li Yi&dagger;</p>
+      <p class="minimal-publication-venue"><em>International Conference on Machine Learning <strong>(ICML)</strong>, 2026.</em></p>
       <div class="minimal-publication-links">
-        <a href="https://arxiv.org/abs/2609.38537">Paper</a>
+        <a href="https://arxiv.org/abs/2606.06953">Paper</a>
       </div>
     </div>
   </article>
