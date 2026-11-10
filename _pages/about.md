@@ -27,8 +27,8 @@ My research focuses on building generalizable embodied agents that can perceive,
 
 ## News
 
-* **[2026]** Awarded the **National Scholarship**.
 * **[2026-10]** Released **PhysRSI-eval**, studying physical recursive self-improvement and observational scaling of LLM policies.
+* **[2026-09]** Awarded the **National Scholarship**.
 * **[2026-09]** Released our technical report on **GPT-6 Astra as Embodied Policies**.
 * **[2026-08]** **EscapeCraft-4D** is accepted to **EMNLP 2026**.
 * **[2026-06]** **HumanTracker** is accepted to **ECCV 2026**.
@@ -127,12 +127,12 @@ My research focuses on building generalizable embodied agents that can perceive,
   <article class="minimal-publication">
     <div class="minimal-publication-media">
       <img src="{{ base_path }}/images/teasers/physrsi_teaser.jpg" alt="PhysRSI-eval overview">
-      <span class="minimal-publication-badge">Tech Report</span>
+      <span class="minimal-publication-badge">arXiv</span>
     </div>
     <div>
       <p class="minimal-publication-title"><a href="https://arxiv.org/abs/2610.26848">Where is Physical RSI capability from? An Observational Scaling Law of LLM-as-policy</a></p>
       <p class="minimal-publication-authors">Zekai Li*, Jiayi Yu*, Jinlu Zhang*, Luyang Niu*, Zekun Qi*, Jun Zheng, Xuchuan Chen, <strong>Dairu Liu</strong>, Yintianrun Zhang, He Wang&dagger;, Li Yi&dagger;</p>
-      <p class="minimal-publication-venue"><em>Technical report, arXiv, 2026.</em></p>
+      <p class="minimal-publication-venue"><em>arXiv, 2026.</em></p>
       <div class="minimal-publication-links">
         <a href="https://arxiv.org/abs/2610.26848">Paper</a>
         <a href="https://physrsi-eval.github.io/">Project</a>
